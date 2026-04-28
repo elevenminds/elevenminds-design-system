@@ -1,0 +1,42 @@
+{
+  "name": "@elevenminds/design-system",
+  "version": "0.1.0",
+  "description": "elevenminds RTLS design system — tokens, subsystems (naanix/linkerweb/spheregt), UI kits, previews.",
+  "license": "UNLICENSED",
+  "private": false,
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/elevenminds/elevenminds-design-system.git"
+  },
+  "homepage": "https://github.com/elevenminds/elevenminds-design-system#readme",
+  "files": [
+    "web/naanix/colors_and_type.css",
+    "web/naanix/_subsystem.css",
+    "web/naanix/sub_systems/naanix/tokens.css",
+    "web/naanix/sub_systems/linkerweb/tokens.css",
+    "web/naanix/sub_systems/spheregt/tokens.css",
+    "web/naanix/assets/em-icons.svg",
+    "web/naanix/assets/logo-elevenminds.svg",
+    "web/naanix/assets/logo-elevenminds-white.svg",
+    "web/naanix/sub_systems/naanix/logo.svg",
+    "index.css",
+    "README.md"
+  ],
+  "exports": {
+    "./tokens.css": "./web/naanix/colors_and_type.css",
+    "./subsystem.css": "./web/naanix/_subsystem.css",
+    "./naanix/tokens.css": "./web/naanix/sub_systems/naanix/tokens.css",
+    "./naanix/logo.svg": "./web/naanix/sub_systems/naanix/logo.svg",
+    "./linkerweb/tokens.css": "./web/naanix/sub_systems/linkerweb/tokens.css",
+    "./spheregt/tokens.css": "./web/naanix/sub_systems/spheregt/tokens.css",
+    "./assets/em-icons.svg": "./web/naanix/assets/em-icons.svg",
+    "./assets/logo.svg": "./web/naanix/assets/logo-elevenminds.svg",
+    "./assets/logo-white.svg": "./web/naanix/assets/logo-elevenminds-white.svg",
+    "./index.css": "./index.css"
+  },
+  "keywords": ["design-system", "css-tokens", "elevenminds", "naanix", "rtls"]
+}
