@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NAANIX — sub-brand sheet</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../_subsystem.css">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  /* page-specific tweaks */
+  body { background: var(--nx-bg-alt); }
+  .sb-page { background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,0.04); }
+  .sb-hero { padding-bottom: 56px; }
+  .sb-hero h1 { color: var(--nx-slate); letter-spacing: -0.03em; }
+
+  /* Lockup with real Naanix logo */
+  .nx-lockup {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+    background: #fff; border: 1px solid var(--nx-border);
+    padding: 24px; min-width: 220px;
+  }
+  .nx-lockup img { height: 48px; }
+  .nx-lockup .nx-attrib {
+    margin-top: 16px; padding-top: 12px;
+    border-top: 1px solid var(--nx-border);
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--nx-slate-2); width: 100%;
+  }
+  .nx-attrib em { color: var(--nx-red); font-style: normal; font-weight: 600; }
+
+  /* Alert ladder demo */
+  .nx-alert-stack { display: flex; gap: 0; align-items: stretch; height: 240px; }
+  .nx-alert-col {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    padding: 14px 8px; color: #fff; position: relative;
+    font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .nx-alert-col span.lab {
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-size: 11px; letter-spacing: 0.2em;
+  }
+  .nx-alert-col span.cnt { font-size: 22px; letter-spacing: 0; margin-bottom: 10px; }
+
+  /* Truck list demo */
+  .nx-list {
+    border: 1px solid var(--nx-border); border-radius: 2px;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+  }
+  .nx-list-head {
+    display: grid; grid-template-columns: 60px 60px 1fr 90px 60px;
+    gap: 12px; padding: 10px 14px;
+    background: var(--nx-bg-data);
+    border-bottom: 1px solid var(--nx-border);
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--nx-slate-2);
+  }
+  .nx-row {
+    display: grid; grid-template-columns: 60px 60px 1fr 90px 60px;
+    gap: 12px; padding: 9px 14px; align-items: center;
+    border-bottom: 1px solid var(--nx-border);
+  }
+  .nx-row:last-child { border-bottom: none; }
+  .nx-time { font-family: var(--em-font-mono); color: var(--nx-slate-2); }
+  .nx-tag-time {
+    display: inline-block; font-family: var(--em-font-mono); font-weight: 600;
+    color: #fff; background-color: #D6266D;
+    padding: 3px 6px; border-radius: 1px; font-size: 11px;
+  }
+  .nx-unit { font-weight: 600; color: var(--nx-slate); }
+  .nx-loc { color: var(--nx-slate-2); }
+  .nx-status {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #2E8B57;
+  }
+  .nx-status.stop { color: #AB160F; }
+  .nx-status.move { color: #2E8B57; }
+  .nx-batt { text-align: right; font-family: var(--em-font-mono); font-weight: 600; }
+
+  /* Radial menu */
+  .nx-radial {
+    width: 280px; height: 280px; border-radius: 50%;
+    position: relative;
+    background-image: conic-gradient(
+      #F08A1F   0deg 72deg,
+      #F5C518  72deg 144deg,
+      #2E8B57  144deg 216deg,
+      #2C8A8C  216deg 288deg,
+      #D6266D 288deg 360deg
+    );
+    box-shadow: 0 12px 32px rgba(40,46,53,0.18);
+  }
+  .nx-radial::after {
+    content: ''; position: absolute; inset: 35%;
+    background: #fff; border-radius: 50%;
+    box-shadow: inset 0 0 0 1px var(--nx-border);
+  }
+  .nx-radial .nx-r-lab {
+    position: absolute; font-family: 'Barlow', sans-serif;
+    font-weight: 700; font-size: 12px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #fff;
+  }
+
+  /* Vehicle popup */
+  .nx-popup {
+    width: 320px; border: 1px solid #D6266D;
+    background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 2px; overflow: hidden;
+    font-family: 'Inter', sans-serif; font-size: 12px;
+  }
+  .nx-popup-head {
+    background-color: #D6266D; color: #fff;
+    padding: 8px 12px; font-weight: 600; font-size: 13px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nx-popup-row { padding: 6px 12px; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--nx-border); }
+  .nx-popup-row:last-child { border-bottom: none; }
+  .nx-popup-row span.k { color: var(--nx-slate-2); text-transform: uppercase; font-size: 10px; letter-spacing: 0.1em; }
+  .nx-popup-row span.v { font-weight: 500; color: var(--nx-slate); }
+  .nx-popup-batt {
+    height: 6px; background: var(--nx-bg-data);
+    margin: 8px 12px;
+  }
+  .nx-popup-batt > i { display: block; height: 100%; background-color: #2E8B57; }
+
+  /* Iconography accent */
+  .nx-icon-tile {
+    display: grid; place-items: center;
+    width: 48px; height: 48px; border-radius: 50%;
+    background-color: #282E35; color: #fff;
+  }
+  .nx-icon-tile.red { background-color: #AB160F; }
+  .nx-icon-tile.alt { background-color: #fff; color: #282E35; border: 1.5px solid #282E35; }
+
+  /* Marketing block */
+  .nx-marketing {
+    background-color: #282E35; color: #fff;
+    padding: 56px 48px; border-radius: 2px;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center;
+  }
+  .nx-marketing h3 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 44px; font-weight: 700; line-height: 1.05;
+    letter-spacing: -0.02em; margin: 0 0 16px 0;
+  }
+  .nx-marketing h3 em { font-style: normal; color: #E8534B; }
+  .nx-marketing p { color: rgba(255,255,255,0.72); font-size: 16px; max-width: 44ch; margin: 0 0 24px 0; }
+  .nx-marketing .stat { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 64px; line-height: 1; color: #E8534B; }
+  .nx-marketing .stat-grid { display: grid; gap: 24px; }
+  .nx-marketing .stat-grid > div { padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+  .nx-marketing .stat-grid > div:first-child { border-top: none; padding-top: 0; }
+  .nx-marketing .stat-grid label { display: block; color: rgba(255,255,255,0.6); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<div class="sb-page">
+
+  <div class="sb-top">
+    <div class="sb-crumb"><a href="../index.html">elevenminds</a> · sub-systems · <strong>NAANIX</strong></div>
+    <div class="sb-lockup">
+      <span class="em-mark">Powered by elevenminds</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="sb-hero">
+    <div>
+      <div class="sb-eyebrow nx-eyebrow">RTLS · Fleet operations · MX</div>
+      <h1>Cada unidad<br>en su lugar.</h1>
+      <p class="sb-lede">NAANIX is the elevenminds fleet platform delivered for SIS — vehicle telemetry, geofencing, alerts and route history for transportation operators across Mexico.</p>
+      <div style="margin-top: 32px; display: flex; gap: 12px;">
+        <a class="sb-btn sb-btn-primary" href="#">Solicitar acceso</a>
+        <a class="sb-btn sb-btn-secondary" href="#">Ver plataforma</a>
+      </div>
+    </div>
+    <div class="nx-lockup">
+      <img src="logo.svg" alt="NAANIX">
+      <div class="nx-attrib">A product of <em>elevenminds</em> · for SIS</div>
+    </div>
+  </div>
+
+  <!-- COLOR -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Color · brand</h2>
+      <span class="sb-tag">Sampled from logotipo + product UI</span>
+    </div>
+    <div class="sb-colors">
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #AB160F" data-role="primary"></div>
+        <div class="sb-swatch-meta"><strong>Naanix red</strong><code>#AB160F</code></div>
+      </div>
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #82110C" data-role="pressed"></div>
+        <div class="sb-swatch-meta"><strong>Red deep</strong><code>#82110C</code></div>
+      </div>
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #FBEAE9" data-role="wash" data-tone="light"></div>
+        <div class="sb-swatch-meta"><strong>Red soft</strong><code>#FBEAE9</code></div>
+      </div>
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #282E35" data-role="ink"></div>
+        <div class="sb-swatch-meta"><strong>Slate</strong><code>#282E35</code></div>
+      </div>
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #3C4451" data-role="ink-2"></div>
+        <div class="sb-swatch-meta"><strong>Slate 2</strong><code>#3C4451</code></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Color · alert ladder</h2>
+      <span class="sb-tag">Live-ops only — never use for non-alert UI</span>
+    </div>
+    <div class="nx-alert-stack">
+      <div class="nx-alert-col" style="background-color: #D7263D;"><span class="cnt">17</span><span class="lab">Crítico</span></div>
+      <div class="nx-alert-col" style="background-color: #F08A1F;"><span class="cnt">42</span><span class="lab">Alerta</span></div>
+      <div class="nx-alert-col" style="background-color: #F5C518; color: #282E35;"><span class="cnt">31</span><span class="lab">Aviso</span></div>
+      <div class="nx-alert-col" style="background-color: #2E8B57;"><span class="cnt">128</span><span class="lab">Operando</span></div>
+      <div class="nx-alert-col" style="background-color: #2C8A8C;"><span class="cnt">9</span><span class="lab">Detenido</span></div>
+      <div class="nx-alert-col" style="background-color: #D6266D;"><span class="cnt">3</span><span class="lab">Seleccionado</span></div>
+    </div>
+    <p style="font-size: 12px; color: var(--nx-slate-2); margin-top: 16px;">
+      The alert ladder is NAANIX's signature touch — saturated full-bleed columns surface fleet status without map zoom. Each column is a destination link to its filtered list.
+    </p>
+  </div>
+
+  <!-- TYPE -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Type</h2>
+      <span class="sb-tag">Barlow display · Inter UI</span>
+    </div>
+    <div class="sb-type">
+      <div class="sb-type-row">
+        <div class="sb-type-meta">Barlow 700 / -0.02em</div>
+        <div class="sb-type-sample" style="font: 700 56px/1 'Barlow', sans-serif; letter-spacing: -0.02em; color: var(--nx-slate);">Cada unidad en su lugar</div>
+      </div>
+      <div class="sb-type-row">
+        <div class="sb-type-meta">Barlow 600 / 24px</div>
+        <div class="sb-type-sample" style="font: 600 24px/1.2 'Barlow', sans-serif; color: var(--nx-slate);">Reporte de operación — 28/04/2026</div>
+      </div>
+      <div class="sb-type-row">
+        <div class="sb-type-meta">Inter 500 / 16px</div>
+        <div class="sb-type-sample" style="font: 500 16px/1.5 'Inter', sans-serif;">El operador de la unidad T-454 reportó exceso de velocidad sobre la ruta KCM — Servicios de operación.</div>
+      </div>
+      <div class="sb-type-row">
+        <div class="sb-type-meta">Barlow 700 / 11px / +0.18em</div>
+        <div class="sb-type-sample nx-eyebrow">Unidad fuera de cerca virtual</div>
+      </div>
+      <div class="sb-type-row">
+        <div class="sb-type-meta">JetBrains Mono / 13px</div>
+        <div class="sb-type-sample" style="font: 500 13px/1.4 var(--em-font-mono); color: var(--nx-slate);">19.461869, -98.928296 · 64 km/h · 792075.6 km</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPONENTS -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Components · in context</h2>
+      <span class="sb-tag">As they appear in the platform</span>
+    </div>
+
+    <div class="sb-grid-2">
+      <!-- Live unit list -->
+      <div>
+        <div class="nx-list">
+          <div class="nx-list-head">
+            <span>Hora</span><span>Unidad</span><span>Ubicación</span><span>Estado</span><span>Bat</span>
+          </div>
+          <div class="nx-row">
+            <span class="nx-time">12:13</span>
+            <span class="nx-unit">T-442</span>
+            <span class="nx-loc">Al Sur, a 1.442 kms de LAS CUATAS VER</span>
+            <span class="nx-status stop">Paro motor</span>
+            <span class="nx-batt">90%</span>
+          </div>
+          <div class="nx-row">
+            <span><span class="nx-tag-time">03:58</span></span>
+            <span class="nx-unit">T-462</span>
+            <span class="nx-loc">Al Noroeste, a 524 mts de CASETA POLOTITLAN</span>
+            <span class="nx-status move">En movimiento</span>
+            <span class="nx-batt">85%</span>
+          </div>
+          <div class="nx-row">
+            <span class="nx-time">12:08</span>
+            <span class="nx-unit">T-385 SU</span>
+            <span class="nx-loc">Cuautitlán Izcalli, Estado de México</span>
+            <span class="nx-status move">En movimiento</span>
+            <span class="nx-batt">92%</span>
+          </div>
+          <div class="nx-row">
+            <span><span class="nx-tag-time">05:26</span></span>
+            <span class="nx-unit">T-294</span>
+            <span class="nx-loc">Sitio Ramsar La Mintzita, Morelia</span>
+            <span class="nx-status move">En movimiento</span>
+            <span class="nx-batt">86%</span>
+          </div>
+          <div class="nx-row">
+            <span class="nx-time">12:09</span>
+            <span class="nx-unit">T-569</span>
+            <span class="nx-loc">Calle Jazmines, Tlalnepantla de Baz</span>
+            <span class="nx-status stop">Detenido</span>
+            <span class="nx-batt">41%</span>
+          </div>
+        </div>
+        <p style="margin-top: 12px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--nx-slate-2);">Lista de unidades · denso</p>
+      </div>
+
+      <!-- Vehicle popup + radial menu -->
+      <div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start;">
+        <div class="nx-popup">
+          <div class="nx-popup-head">
+            <span>T-448 · Flotilla 2</span>
+            <span style="opacity: 0.7;">28/04 12:31</span>
+          </div>
+          <div class="nx-popup-row"><span class="k">Velocidad</span><span class="v">64 km/h</span></div>
+          <div class="nx-popup-row"><span class="k">Operador</span><span class="v">Buscando…</span></div>
+          <div class="nx-popup-row"><span class="k">Odómetro</span><span class="v">792 075.6 km</span></div>
+          <div class="nx-popup-row"><span class="k">Sitio</span><span class="v">Al Sur, 2.815 kms de Texcoco</span></div>
+          <div class="nx-popup-row"><span class="k">Posición</span><span class="v" style="font-family: var(--em-font-mono); font-size: 11px;">19.4618, −98.9282</span></div>
+          <div class="nx-popup-batt"><i style="width: 95%;"></i></div>
+          <div class="nx-popup-row"><span class="k">Batería</span><span class="v">95%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: center;">
+      <div class="nx-radial" aria-label="Acciones rápidas"></div>
+      <div>
+        <h3 style="font: 700 20px/1.2 'Barlow', sans-serif; color: var(--nx-slate); margin: 0 0 8px;">Menú radial — acciones rápidas</h3>
+        <p style="margin: 0; color: var(--nx-slate-2); font-size: 14px; max-width: 50ch;">
+          Five quadrants on a 280-px wheel. Each color from the alert ladder maps to one action category — the operator's muscle memory matches their alert color memory.
+        </p>
+        <ul style="margin: 16px 0 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; font-size: 13px; color: #282E35;">
+          <li style="display:flex; align-items:center; gap:10px;"><i style="display:inline-block; width:14px; height:14px; background-color:#F08A1F; border-radius:2px;"></i>Comunicación</li>
+          <li style="display:flex; align-items:center; gap:10px;"><i style="display:inline-block; width:14px; height:14px; background-color:#F5C518; border-radius:2px;"></i>Configuración</li>
+          <li style="display:flex; align-items:center; gap:10px;"><i style="display:inline-block; width:14px; height:14px; background-color:#2E8B57; border-radius:2px;"></i>Recorridos</li>
+          <li style="display:flex; align-items:center; gap:10px;"><i style="display:inline-block; width:14px; height:14px; background-color:#2C8A8C; border-radius:2px;"></i>Reportes</li>
+          <li style="display:flex; align-items:center; gap:10px;"><i style="display:inline-block; width:14px; height:14px; background-color:#D6266D; border-radius:2px;"></i>Hoy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ICONOGRAPHY -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Iconography</h2>
+      <span class="sb-tag">Naanix layer over the elevenminds icon set</span>
+    </div>
+    <p style="font-size: 14px; color: var(--nx-slate-2); margin: 0 0 20px; max-width: 70ch;">
+      NAANIX uses the full elevenminds icon library but in <strong>solid circular tiles</strong> rather than the outline roundels — denser, more affirmative, sized 40–48px in the toolbar. Red tiles signal destructive or alert actions; slate tiles for navigation; outlined tiles for secondary tools.
+    </p>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <div class="nx-icon-tile"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg></div>
+      <div class="nx-icon-tile"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2c-4 0-7 3-7 7 0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg></div>
+      <div class="nx-icon-tile"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <div class="nx-icon-tile red"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 22h20L12 2z"/><path d="M12 9v6"/><circle cx="12" cy="18" r="0.8" fill="currentColor"/></svg></div>
+      <div class="nx-icon-tile red"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h2l2-7h8l2 4h4v3"/><circle cx="7.5" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div>
+      <div class="nx-icon-tile alt"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5h0a1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
+    </div>
+  </div>
+
+  <!-- MARKETING -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Marketing surface</h2>
+      <span class="sb-tag">Web hero · partner sales</span>
+    </div>
+    <div class="nx-marketing">
+      <div>
+        <div class="nx-eyebrow" style="color: rgba(255,255,255,0.72); margin-bottom: 16px;">RTLS · Transporte · MX</div>
+        <h3>Cada vehículo, <em>en su lugar.</em><br>Cada minuto, contado.</h3>
+        <p>NAANIX gives transportation operators across Mexico real-time visibility over their fleet — geofencing, alert ladders and route history without leaving the map.</p>
+        <a class="sb-btn sb-btn-primary" href="#" style="background: var(--nx-red);">Demostración</a>
+      </div>
+      <div class="stat-grid">
+        <div>
+          <div class="stat">3.4M</div>
+          <label>Eventos GPS / día</label>
+        </div>
+        <div>
+          <div class="stat">128</div>
+          <label>Flotas activas</label>
+        </div>
+        <div>
+          <div class="stat">99.96%</div>
+          <label>Uptime trimestral</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOICE -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Voice</h2>
+      <span class="sb-tag">Spanish-first · operator tone</span>
+    </div>
+    <div class="sb-grid-3">
+      <div class="sb-card">
+        <h3>Direct, in present tense</h3>
+        <p>"Unidad T-454 fuera de ruta a las 11:38." Not "We've detected that unit T-454 may have left its assigned route."</p>
+      </div>
+      <div class="sb-card">
+        <h3>Operator vocabulary</h3>
+        <p>Flotilla, recorrido, parada, geocerca, posta, telefonema. Avoid translated SaaS-isms (no "engagement", no "dashboard").</p>
+      </div>
+      <div class="sb-card">
+        <h3>Alerts use the ladder, not adjectives</h3>
+        <p>Color carries severity. Copy stays factual: "Velocidad 86 km/h. Límite 80." No "uh-oh", no "we noticed".</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sb-foot">
+    <span>NAANIX · sub-system of <a href="../../README.md">elevenminds</a></span>
+    <span>v0.1 · April 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>

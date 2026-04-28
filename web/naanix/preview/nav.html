@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Nav</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:0;background:#fff;font-family:var(--em-font-sans)}
+  .nav{display:flex;align-items:center;gap:28px;padding:18px 22px;border-bottom:1px solid #E5E5E5}
+  .brand img{height:22px;display:block}
+  .links{display:flex;gap:22px;font-size:14px}
+  .links a{color:#111;text-decoration:none;position:relative}
+  .links a.active::after{content:"";position:absolute;left:-4px;right:-4px;bottom:-4px;height:8px;background:#2847E0;z-index:-1;transform:skew(-6deg)}
+  .spacer{flex:1}
+  .cta{background:#111;color:#fff;font-size:13px;padding:8px 14px;border-radius:8px;border:none;font-family:inherit}
+</style>
+</head>
+<body>
+  <div class="nav">
+    <div class="brand"><img src="../assets/logo-elevenminds.svg" alt="elevenminds"></div>
+    <div class="links">
+      <a class="active">Products</a><a>Solutions</a><a>Studio</a><a>About</a><a>Help Desk</a>
+    </div>
+    <div class="spacer"></div>
+    <button class="cta">Partner Login →</button>
+  </div>
+</body>
+</html>

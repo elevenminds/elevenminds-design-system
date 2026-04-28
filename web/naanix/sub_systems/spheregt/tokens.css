@@ -1,0 +1,63 @@
+/* ============================================================
+   SphereGT — sub-system tokens
+   ------------------------------------------------------------
+   Geo-tracking platform. The "premium" sub-brand — higher-end
+   transport operators, longer routes, premium telematics.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- SphereGT brand ---------- */
+  --sg-navy:       #0E1B3D;   /* primary deep navy                 */
+  --sg-navy-deep:  #060E25;
+  --sg-navy-soft:  #E6EAF5;
+  --sg-cyan:       #00C2D6;   /* bright accent — orbital glow      */
+  --sg-cyan-deep:  #0099AA;
+  --sg-ink:        #0E1B3D;
+  --sg-fg-2:       #4B5677;
+
+  /* Atmospheric gradient stops for the sphere mark */
+  --sg-orb-1:      #00C2D6;
+  --sg-orb-2:      #2C5BC9;
+  --sg-orb-3:      #0E1B3D;
+
+  /* Surfaces */
+  --sg-bg:         #FFFFFF;
+  --sg-bg-alt:     #F4F6FB;
+  --sg-border:     #DEE3F0;
+
+  --sb-primary:        var(--sg-navy);
+  --sb-primary-deep:   var(--sg-navy-deep);
+  --sb-primary-soft:   var(--sg-navy-soft);
+  --sb-on-primary:     #FFFFFF;
+  --sb-mark-bg:        var(--sg-navy);
+  --sb-mark-fg:        var(--sg-cyan);
+  --sb-radius-mark:    50%;
+  --sb-radius-card:    14px;
+  --sb-radius-btn:     999px;
+  --sb-font-sans:      'Inter', system-ui, sans-serif;
+  --sb-font-display:   'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+/* ---------- SphereGT-specific utilities ---------- */
+.sg-orb {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.6), transparent 35%),
+    radial-gradient(circle at 70% 75%, var(--sg-cyan), transparent 50%),
+    linear-gradient(135deg, var(--sg-orb-2), var(--sg-orb-3));
+  box-shadow:
+    inset 0 0 40px rgba(0,194,214,0.4),
+    0 12px 40px rgba(14,27,61,0.32);
+}
+
+.sg-eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sg-cyan-deep);
+}

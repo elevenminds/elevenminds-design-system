@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sub-systems · elevenminds</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_subsystem.css">
+<style>
+  body { background: var(--em-bg-2); }
+  .sb-page { background: #fff; }
+
+  .sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .sub-card {
+    border: 1px solid var(--em-border);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    display: flex; flex-direction: column;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .sub-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+
+  .sub-card .head {
+    padding: 32px;
+    display: grid; grid-template-columns: auto 1fr; gap: 20px;
+    align-items: center;
+    color: #fff;
+  }
+  .sub-card.naanix .head { background: #282E35; }
+  .sub-card.spheregt .head {
+    background: radial-gradient(circle at 75% 35%, rgba(0,194,214,0.32), transparent 50%), linear-gradient(135deg, #0E1B3D, #1A2D5C);
+  }
+  .sub-card.linkerweb .head { background: #1F6B4F; opacity: 0.55; }
+
+  .sub-card .head .mark {
+    width: 64px; height: 64px;
+    display: grid; place-items: center;
+    background: #fff;
+    flex-shrink: 0;
+  }
+  .sub-card.spheregt .head .mark { background: transparent; }
+  .sub-card.spheregt .head .mark .orb {
+    width: 64px; height: 64px; border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 28%, rgba(255,255,255,0.6), transparent 35%),
+      radial-gradient(circle at 70% 75%, #00C2D6, transparent 50%),
+      linear-gradient(135deg, #2C5BC9, #0E1B3D);
+    box-shadow: inset 0 0 24px rgba(0,194,214,0.4);
+  }
+  .sub-card.linkerweb .head .mark { background: rgba(255,255,255,0.1); border: 1px dashed rgba(255,255,255,0.4); }
+
+  .sub-card .head .mark img { width: 80%; }
+
+  .sub-card .head h2 {
+    margin: 0;
+    font-size: 28px; font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .sub-card.naanix .head h2 { font-family: 'Barlow', sans-serif; }
+  .sub-card.spheregt .head h2 { font-family: 'Space Grotesk', sans-serif; }
+  .sub-card.linkerweb .head h2 { font-family: 'IBM Plex Sans', sans-serif; }
+  .sub-card .head .tag {
+    margin-top: 6px;
+    font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+  .sub-card.naanix .head .tag em { font-style: normal; color: #FF8B85; }
+  .sub-card.spheregt .head .tag em { font-style: normal; color: #00C2D6; }
+
+  .sub-card .body {
+    padding: 24px 32px 32px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .sub-card .body p {
+    margin: 0; font-size: 14px; line-height: 1.55;
+    color: var(--em-fg-2);
+  }
+  .sub-card .swatches {
+    display: flex; gap: 6px;
+  }
+  .sub-card .swatches span {
+    width: 24px; height: 24px; border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .sub-card.spheregt .swatches span { border-radius: 50%; }
+  .sub-card.linkerweb .swatches span { border-radius: 0; }
+  .sub-card .meta {
+    display: flex; justify-content: space-between;
+    padding-top: 16px; border-top: 1px solid var(--em-divider);
+    font-size: 12px; color: var(--em-fg-2);
+  }
+  .sub-card .meta strong { color: var(--em-ink); font-weight: 600; }
+
+  .sub-card.linkerweb { opacity: 0.7; pointer-events: none; }
+  .sub-card.linkerweb::after {
+    content: 'Coming soon';
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 10px;
+    background: var(--em-bg-3);
+    color: var(--em-fg-2);
+    font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 32px 32px;
+    border-radius: 999px;
+  }
+
+  /* Compare table */
+  .sub-compare {
+    width: 100%; border-collapse: collapse;
+    margin-top: 24px;
+    font-size: 13px;
+  }
+  .sub-compare th, .sub-compare td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--em-divider);
+    vertical-align: top;
+  }
+  .sub-compare th {
+    font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--em-fg-2); font-weight: 600;
+    background: var(--em-bg-2);
+  }
+  .sub-compare td:first-child {
+    font-weight: 600; color: var(--em-ink);
+    width: 200px;
+  }
+  .sub-compare .pill {
+    display: inline-block; padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .sub-compare .pill.nx { background: #FBEAE9; color: #AB160F; }
+  .sub-compare .pill.sg { background: #E6F8FB; color: #0099AA; }
+  .sub-compare .pill.lw { background: #E5F1EC; color: #1F6B4F; }
+</style>
+</head>
+<body>
+
+<div class="sb-page">
+
+  <div class="sb-top">
+    <div class="sb-crumb"><a href="../README.md">elevenminds</a> · <strong>sub-systems</strong></div>
+    <div class="sb-lockup">
+      <span class="em-mark">elevenminds design system · v0.2</span>
+    </div>
+  </div>
+
+  <div class="sb-hero">
+    <div>
+      <div class="sb-eyebrow">Distributor brands</div>
+      <h1>One platform.<br>Many faces.</h1>
+      <p class="sb-lede">elevenminds builds the underlying RTLS / fleet platform. Distributors take it to market under their own brand. Each sub-system here is a distinct visual surface — own colors, own type, own iconographic accents — sharing the same components, conventions and engineering underneath.</p>
+    </div>
+  </div>
+
+  <!-- The cards -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Active sub-systems</h2>
+      <span class="sb-tag">2 of 3 published · 1 drafting</span>
+    </div>
+
+    <div class="sub-grid">
+
+      <a class="sub-card naanix" href="naanix/index.html">
+        <div class="head">
+          <div class="mark"><img src="naanix/logo.svg" alt="Naanix"></div>
+          <div>
+            <h2>NAANIX</h2>
+            <div class="tag">For <em>SIS</em> · Fleet operations · MX</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>Map-first, alert-driven fleet ops for transportation operators across Mexico. Dense data tables, signature multi-color alert ladder, radial action menu.</p>
+          <div class="swatches">
+            <span style="background: #AB160F;"></span>
+            <span style="background: #282E35;"></span>
+            <span style="background: #D7263D;"></span>
+            <span style="background: #F08A1F;"></span>
+            <span style="background: #2E8B57;"></span>
+            <span style="background: #2C8A8C;"></span>
+            <span style="background: #D6266D;"></span>
+          </div>
+          <div class="meta">
+            <span>Type · <strong>Barlow + Inter</strong></span>
+            <span>Mark · <strong>Red shield</strong></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="sub-card spheregt" href="spheregt/index.html">
+        <div class="head">
+          <div class="mark"><div class="orb"></div></div>
+          <div>
+            <h2>sphere<em style="color: #00C2D6; font-style: normal;">GT</em></h2>
+            <div class="tag">Premium telematics · <em>orbital</em> coverage</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>Higher-end telematics for premium transport operators — long-haul, refrigerated, regulated cargo. Spherical mark, navy + cyan glow, generous spacing, pill buttons.</p>
+          <div class="swatches">
+            <span style="background: #0E1B3D;"></span>
+            <span style="background: #060E25;"></span>
+            <span style="background: #00C2D6;"></span>
+            <span style="background: #0099AA;"></span>
+            <span style="background: #E6EAF5;"></span>
+          </div>
+          <div class="meta">
+            <span>Type · <strong>Space Grotesk + Inter</strong></span>
+            <span>Mark · <strong>Gradient orb</strong></span>
+          </div>
+        </div>
+      </a>
+
+      <div class="sub-card linkerweb">
+        <div class="head">
+          <div class="mark"></div>
+          <div>
+            <h2>LinkerWeb</h2>
+            <div class="tag">For InnovaLinks · drafting</div>
+          </div>
+        </div>
+        <div class="body">
+          <p>Regional fleet platform delivered through InnovaLinks. Drafting — direction, color story and iconography to be defined in a later round.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Comparison matrix -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>How they differ</h2>
+      <span class="sb-tag">Same skeleton · different skin</span>
+    </div>
+    <table class="sub-compare">
+      <thead>
+        <tr>
+          <th></th>
+          <th><span class="pill nx">NAANIX</span></th>
+          <th><span class="pill sg">SphereGT</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Audience</td>
+          <td>Mid-market transport operators · ops dispatchers</td>
+          <td>Premium long-haul / regulated cargo · logistics directors</td>
+        </tr>
+        <tr>
+          <td>Personality</td>
+          <td>Direct, operational, present-tense Spanish</td>
+          <td>Quietly precise, technical, confident</td>
+        </tr>
+        <tr>
+          <td>Primary color</td>
+          <td>Naanix red <code style="font-size: 11px;">#AB160F</code></td>
+          <td>Sphere navy <code style="font-size: 11px;">#0E1B3D</code></td>
+        </tr>
+        <tr>
+          <td>Accent system</td>
+          <td>Six-color alert ladder (red→amber→yellow→green→teal→magenta)</td>
+          <td>Single bright cyan accent <code style="font-size: 11px;">#00C2D6</code></td>
+        </tr>
+        <tr>
+          <td>Display type</td>
+          <td>Barlow — squared, condensed, operational</td>
+          <td>Space Grotesk — geometric, technical</td>
+        </tr>
+        <tr>
+          <td>Corner radii</td>
+          <td>2 px — squared, utilitarian</td>
+          <td>14 px cards · 999 px buttons — soft, premium</td>
+        </tr>
+        <tr>
+          <td>Iconography</td>
+          <td>Filled circular tiles, 40–48 px, color-coded</td>
+          <td>Outlined, mono-line, on dark surfaces</td>
+        </tr>
+        <tr>
+          <td>Density</td>
+          <td>High — dense tables, narrow rows, tight gaps</td>
+          <td>Medium — generous padding, breathing room, soft shadows</td>
+        </tr>
+        <tr>
+          <td>Map base</td>
+          <td>Standard Google Maps light theme</td>
+          <td>Custom dark map with grid overlay and pulse pins</td>
+        </tr>
+        <tr>
+          <td>Signature element</td>
+          <td>Right-edge alert ladder + radial action wheel</td>
+          <td>Pulsing pin with floating label · gradient orb mark</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- What's shared -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>What stays elevenminds</h2>
+      <span class="sb-tag">The skeleton beneath every sub-brand</span>
+    </div>
+    <div class="sb-grid-3">
+      <div class="sb-card">
+        <h3>The platform</h3>
+        <p>Same backend, same data model, same APIs. A fleet, geocerca, ruta and unidad mean the same thing across NAANIX and SphereGT.</p>
+      </div>
+      <div class="sb-card">
+        <h3>Components &amp; conventions</h3>
+        <p>Tables, alert states, map controls, settings panes, popups all share structure and behavior. Each sub-system restyles them, never re-invents.</p>
+      </div>
+      <div class="sb-card">
+        <h3>The icon library</h3>
+        <p>One symbol set. Sub-systems may change the container (filled circle vs. outline) and accent color, but the glyphs remain elevenminds.</p>
+      </div>
+      <div class="sb-card">
+        <h3>Engineering</h3>
+        <p>One codebase, theme-switched at the distributor level. New sub-systems are a tokens.css + asset pack — never a fork.</p>
+      </div>
+      <div class="sb-card">
+        <h3>"Powered by elevenminds"</h3>
+        <p>Every sub-brand acknowledges the platform — usually as an eyebrow or footer attribution. Discreet, but always present.</p>
+      </div>
+      <div class="sb-card">
+        <h3>Spanish-first content</h3>
+        <p>All sub-systems serve Mexican operators. Voice differs by audience, but Spanish is the source language — English is the translation, not the other way around.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sb-foot">
+    <span><a href="../README.md">elevenminds</a> · sub-systems</span>
+    <span>v0.2 · April 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>

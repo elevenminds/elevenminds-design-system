@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Icons — Core</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px;background:#fff;font-family:var(--em-font-sans)}
+  .grid{display:grid;grid-template-columns:repeat(10,1fr);gap:14px;align-items:end}
+  .cell{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .roundel{width:56px;height:56px;border-radius:50%;background:#E5E5E5;position:relative;display:flex;align-items:center;justify-content:center}
+  .roundel svg{width:32px;height:32px}
+  .flag{position:absolute;top:-6px;right:-4px;width:18px;height:16px}
+  .label{font-size:10px;color:#525252;font-family:'JetBrains Mono',monospace}
+</style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute"><use href="../assets/em-icons.svg"/></svg>
+  <div class="grid">
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-clock"/></svg></div><span class="label">clock</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-cube"/></svg></div><span class="label">cube</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-seat"/></svg></div><span class="label">seat</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-person-seat"/></svg></div><span class="label">person-seat</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-grid"/></svg></div><span class="label">grid</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-pie"/></svg></div><span class="label">pie</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-footsteps"/></svg></div><span class="label">footsteps</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-desk"/></svg></div><span class="label">desk</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-survey"/></svg></div><span class="label">survey</span></div>
+    <div class="cell"><div class="roundel"><svg><use href="../assets/em-icons.svg?v=2#em-size"/></svg></div><span class="label">size</span></div>
+  </div>
+</body>
+</html>

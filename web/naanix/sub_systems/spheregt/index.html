@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SphereGT — sub-brand sheet</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../_subsystem.css">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  body { background: var(--sg-bg-alt); }
+  .sb-page { background: #fff; box-shadow: 0 1px 0 rgba(14,27,61,0.04); }
+  .sb-hero h1 {
+    color: var(--sg-navy); font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.03em;
+  }
+  .sb-hero h1 em { font-style: normal; color: var(--sg-cyan-deep); }
+
+  /* Lockup card */
+  .sg-lockup {
+    background: var(--sg-navy); color: #fff;
+    width: 240px; min-height: 260px;
+    border-radius: 24px;
+    padding: 28px 24px;
+    display: flex; flex-direction: column; gap: 20px;
+    box-shadow: 0 16px 48px rgba(14,27,61,0.32);
+    position: relative; overflow: hidden;
+  }
+  .sg-lockup::before {
+    content: ''; position: absolute; inset: -40% -40% auto auto;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--sg-cyan) 0%, transparent 70%);
+    opacity: 0.4; pointer-events: none;
+  }
+  .sg-lockup .sg-mark {
+    width: 56px; height: 56px;
+  }
+  .sg-lockup h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px; font-weight: 700; margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .sg-lockup h2 em { font-style: normal; color: var(--sg-cyan); }
+  .sg-lockup .sg-attrib {
+    font-family: 'Space Grotesk', sans-serif;
+    margin-top: auto; font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* Orb large */
+  .sg-orb-lg { width: 120px; height: 120px; }
+
+  /* Map vignette demo */
+  .sg-map {
+    height: 320px; border-radius: 16px;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(0,194,214,0.18), transparent 40%),
+      radial-gradient(circle at 70% 70%, rgba(44,91,201,0.15), transparent 40%),
+      linear-gradient(180deg, #0E1B3D 0%, #1A2D5C 100%);
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .sg-map::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,194,214,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,194,214,0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.5;
+  }
+  .sg-pin {
+    position: absolute; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--sg-cyan);
+    box-shadow: 0 0 0 4px rgba(0,194,214,0.25), 0 0 24px var(--sg-cyan);
+  }
+  .sg-pin::after {
+    content: ''; position: absolute; inset: -8px;
+    border-radius: 50%; border: 1px solid var(--sg-cyan);
+    opacity: 0.5;
+    animation: sg-pulse 2.4s ease-out infinite;
+  }
+  @keyframes sg-pulse {
+    0% { transform: scale(0.6); opacity: 0.6; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+  .sg-pin-label {
+    position: absolute; background: #fff; color: var(--sg-navy);
+    border-radius: 8px; padding: 6px 10px;
+    font-size: 11px; font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transform: translate(20px, -50%);
+    white-space: nowrap;
+  }
+  .sg-pin-label::before {
+    content: ''; position: absolute;
+    left: -4px; top: 50%; transform: translateY(-50%) rotate(45deg);
+    width: 8px; height: 8px; background: #fff;
+  }
+
+  /* KPI strip */
+  .sg-kpi {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .sg-kpi-card {
+    background: #fff;
+    border: 1px solid var(--sg-border);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .sg-kpi-card .lab {
+    font: 600 10px/1 'Space Grotesk', sans-serif;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--sg-fg-2); margin-bottom: 12px;
+  }
+  .sg-kpi-card .val {
+    font: 700 32px/1 'Space Grotesk', sans-serif;
+    color: var(--sg-navy); letter-spacing: -0.02em;
+  }
+  .sg-kpi-card .delta {
+    margin-top: 8px; font-size: 11px;
+    color: var(--sg-cyan-deep); font-weight: 600;
+  }
+
+  /* Ring chart */
+  .sg-ring {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: conic-gradient(var(--sg-cyan) 0 78%, var(--sg-navy-soft) 78% 100%);
+    display: grid; place-items: center;
+    position: relative;
+  }
+  .sg-ring::after {
+    content: ''; position: absolute; inset: 12px;
+    background: #fff; border-radius: 50%;
+  }
+  .sg-ring span {
+    position: relative; z-index: 1;
+    font: 700 28px/1 'Space Grotesk', sans-serif;
+    color: var(--sg-navy);
+  }
+
+  /* Marketing band */
+  .sg-marketing {
+    background:
+      radial-gradient(circle at 80% 30%, rgba(0,194,214,0.4), transparent 40%),
+      linear-gradient(135deg, var(--sg-navy) 0%, #1A2D5C 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 64px 48px;
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px;
+    align-items: center;
+    overflow: hidden; position: relative;
+  }
+  .sg-marketing h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px; font-weight: 700;
+    line-height: 1.05; letter-spacing: -0.025em;
+    margin: 0 0 16px 0;
+  }
+  .sg-marketing h3 em {
+    font-style: normal;
+    background: linear-gradient(120deg, var(--sg-cyan), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sg-marketing p {
+    color: rgba(255,255,255,0.72);
+    font-size: 16px; max-width: 48ch;
+    margin: 0 0 28px 0;
+  }
+  .sg-marketing .sg-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--sg-cyan); color: var(--sg-navy);
+    padding: 14px 24px;
+    border-radius: 999px;
+    font: 600 14px/1 'Space Grotesk', sans-serif;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .sg-marketing .orb-feature { width: 280px; height: 280px; margin: 0 auto; }
+</style>
+</head>
+<body>
+
+<div class="sb-page">
+
+  <div class="sb-top">
+    <div class="sb-crumb"><a href="../index.html">elevenminds</a> · sub-systems · <strong>SphereGT</strong></div>
+    <div class="sb-lockup">
+      <span class="em-mark">Powered by elevenminds</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="sb-hero">
+    <div>
+      <div class="sg-eyebrow">Telemetría · Transporte premium · MX</div>
+      <h1 style="margin-top: 16px;">Tu flota, <em>en órbita.</em></h1>
+      <p class="sb-lede">SphereGT is the elevenminds telematics platform for premium transport operators — long-haul, refrigerated, regulated cargo. Spherical map, sensor-deep, route-aware.</p>
+      <div style="margin-top: 32px; display: flex; gap: 12px;">
+        <a class="sb-btn sb-btn-primary" href="#" style="background: var(--sg-cyan); color: var(--sg-navy);">Solicitar demo</a>
+        <a class="sb-btn sb-btn-secondary" href="#">Ver plataforma</a>
+      </div>
+    </div>
+    <div class="sg-lockup">
+      <div class="sg-mark"><div class="sg-orb"></div></div>
+      <h2>sphere<em>GT</em></h2>
+      <span style="font: 500 12px/1.5 'Inter', sans-serif; color: rgba(255,255,255,0.7);">Geo-Tracking · v5.0</span>
+      <div class="sg-attrib">A product of elevenminds</div>
+    </div>
+  </div>
+
+  <!-- COLOR -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Color</h2>
+      <span class="sb-tag">Atmospheric — navy + cyan glow</span>
+    </div>
+    <div class="sb-colors">
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #0E1B3D" data-role="primary"></div>
+        <div class="sb-swatch-meta"><strong>Sphere navy</strong><code>#0E1B3D</code></div>
+      </div>
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #060E25" data-role="deep"></div>
+        <div class="sb-swatch-meta"><strong>Navy deep</strong><code>#060E25</code></div>
+      </div>
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #00C2D6" data-role="accent"></div>
+        <div class="sb-swatch-meta"><strong>Orbit cyan</strong><code>#00C2D6</code></div>
+      </div>
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #0099AA" data-role="cyan-deep"></div>
+        <div class="sb-swatch-meta"><strong>Cyan deep</strong><code>#0099AA</code></div>
+      </div>
+      <div class="sb-swatch">
+        <div class="sb-swatch-chip" style="background: #E6EAF5" data-role="wash" data-tone="light"></div>
+        <div class="sb-swatch-meta"><strong>Navy soft</strong><code>#E6EAF5</code></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORB MARK -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Mark · the orb</h2>
+      <span class="sb-tag">Gradient sphere — never flatten</span>
+    </div>
+    <div style="display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center;">
+      <div class="sg-orb-lg"><div class="sg-orb"></div></div>
+      <div>
+        <p style="margin: 0 0 12px; font-size: 14px; color: var(--sg-fg-2); max-width: 60ch;">
+          The sphere is built from layered radial gradients — a cyan highlight at top-left, a hot cyan core bleeding through bottom-right, on a navy-to-deep-blue base. It signals <strong>orbital coverage</strong>: vehicles tracked from above, around the clock.
+        </p>
+        <ul style="margin: 0; padding-left: 18px; font-size: 13px; color: var(--sg-fg-2);">
+          <li>Minimum size: 24×24 px (favicon). Never below.</li>
+          <li>Always on a dark surface (navy or photographic).</li>
+          <li>Don't recolor. Don't add a stroke. Don't combine with the elevenminds wordmark in the same lockup — use the "Powered by elevenminds" eyebrow instead.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPE -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Type</h2>
+      <span class="sb-tag">Space Grotesk display · Inter UI</span>
+    </div>
+    <div class="sb-type">
+      <div class="sb-type-row">
+        <div class="sb-type-meta">Space Grotesk 700 / -0.025em</div>
+        <div class="sb-type-sample" style="font: 700 56px/1 'Space Grotesk', sans-serif; letter-spacing: -0.025em; color: var(--sg-navy);">Tu flota, en órbita.</div>
+      </div>
+      <div class="sb-type-row">
+        <div class="sb-type-meta">Space Grotesk 600 / 28px</div>
+        <div class="sb-type-sample" style="font: 600 28px/1.2 'Space Grotesk', sans-serif; color: var(--sg-navy);">Ruta CDMX → Querétaro · 12 unidades</div>
+      </div>
+      <div class="sb-type-row">
+        <div class="sb-type-meta">Inter 500 / 16px</div>
+        <div class="sb-type-sample" style="font: 500 16px/1.5 'Inter', sans-serif; color: var(--sg-ink);">Each vehicle reports position, speed, fuel, temperature and door state every 30 seconds — so the dispatcher never wonders, only acts.</div>
+      </div>
+      <div class="sb-type-row">
+        <div class="sb-type-meta">Space Grotesk 600 / 11px / +0.22em</div>
+        <div class="sb-type-sample sg-eyebrow">Live · 32 unidades en ruta</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPONENTS -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Components · in context</h2>
+      <span class="sb-tag">Pill buttons · 14-px radii · soft shadows</span>
+    </div>
+
+    <!-- Map -->
+    <div class="sg-map">
+      <div class="sg-pin" style="top: 35%; left: 22%;"></div>
+      <div class="sg-pin-label" style="top: 35%; left: 22%;">T-704 · 84 km/h</div>
+      <div class="sg-pin" style="top: 60%; left: 55%;"></div>
+      <div class="sg-pin-label" style="top: 60%; left: 55%;">T-712 · detenido 14 min</div>
+      <div class="sg-pin" style="top: 28%; left: 75%;"></div>
+      <div class="sg-pin-label" style="top: 28%; left: 75%;">T-728 · 96 km/h</div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="sg-kpi" style="margin-top: 24px;">
+      <div class="sg-kpi-card">
+        <div class="lab">En ruta</div>
+        <div class="val">32</div>
+        <div class="delta">+4 vs ayer</div>
+      </div>
+      <div class="sg-kpi-card">
+        <div class="lab">Velocidad media</div>
+        <div class="val">68 <span style="font-size: 14px; color: var(--sg-fg-2); letter-spacing: 0; font-weight: 500;">km/h</span></div>
+        <div class="delta">−2 km/h</div>
+      </div>
+      <div class="sg-kpi-card">
+        <div class="lab">Cumplimiento</div>
+        <div class="val" style="display: flex; align-items: center; gap: 16px;">
+          <span class="sg-ring"><span>78%</span></span>
+        </div>
+      </div>
+      <div class="sg-kpi-card">
+        <div class="lab">Alertas abiertas</div>
+        <div class="val" style="color: var(--sg-cyan-deep);">7</div>
+        <div class="delta" style="color: var(--sg-fg-2);">3 críticas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKETING -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Marketing surface</h2>
+      <span class="sb-tag">Web hero · enterprise sales</span>
+    </div>
+    <div class="sg-marketing">
+      <div>
+        <div class="sg-eyebrow" style="color: var(--sg-cyan); margin-bottom: 16px;">Telematics · Premium transport</div>
+        <h3>Cobertura <em>orbital.</em><br>Decisiones terrenales.</h3>
+        <p>Position, speed, fuel, door state, temperature — every 30 seconds, every vehicle, every kilometre. SphereGT is the telematics layer for fleets that can't afford to wonder.</p>
+        <a class="sg-cta" href="#">Solicitar demo →</a>
+      </div>
+      <div class="orb-feature"><div class="sg-orb"></div></div>
+    </div>
+  </div>
+
+  <!-- VOICE -->
+  <div class="sb-section">
+    <div class="sb-section-head">
+      <h2>Voice</h2>
+      <span class="sb-tag">Confident · technical · cool</span>
+    </div>
+    <div class="sb-grid-3">
+      <div class="sb-card">
+        <h3>Quietly precise</h3>
+        <p>"Posición a las 14:02:31 — 19.4321, −99.1276." Coordinates and timestamps signal trustworthiness, not intimidation.</p>
+      </div>
+      <div class="sb-card">
+        <h3>Premium operator vocabulary</h3>
+        <p>Cumplimiento, ETA, telemetría, sensor de carga, ruta planeada. SphereGT addresses logistics directors, not drivers.</p>
+      </div>
+      <div class="sb-card">
+        <h3>The orb is the metaphor</h3>
+        <p>"Cobertura orbital", "vista esférica", "punto de la ruta". Lean into the spatial language. Avoid generic SaaS-isms.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sb-foot">
+    <span>SphereGT · sub-system of <a href="../../README.md">elevenminds</a></span>
+    <span>v0.1 · April 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>

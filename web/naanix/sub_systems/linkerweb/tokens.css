@@ -1,0 +1,44 @@
+/* ============================================================
+   LinkerWeb — sub-system tokens (DRAFT)
+   ------------------------------------------------------------
+   Distributor surface for InnovaLinks. Network/connectivity
+   theme — regional fleet operators, infrastructure crews.
+   Status: drafting. Not for production use.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --lw-green:      #1F6B4F;
+  --lw-green-deep: #154A37;
+  --lw-green-soft: #E5F1EC;
+  --lw-amber:      #C77A0E;
+  --lw-amber-soft: #FBEFD8;
+  --lw-ink:        #1A2421;
+  --lw-fg-2:       #4D5A55;
+
+  --lw-bg:         #FFFFFF;
+  --lw-bg-alt:     #F5F4EE;
+  --lw-bg-data:    #FAF9F4;
+  --lw-border:     #DDDBCF;
+
+  --sb-primary:        var(--lw-green);
+  --sb-primary-deep:   var(--lw-green-deep);
+  --sb-primary-soft:   var(--lw-green-soft);
+  --sb-on-primary:     #FFFFFF;
+  --sb-mark-bg:        var(--lw-green);
+  --sb-mark-fg:        #FFFFFF;
+  --sb-radius-mark:    8px;
+  --sb-radius-card:    6px;
+  --sb-radius-btn:     0;
+  --sb-font-sans:      'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+  --sb-font-display:   'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+}
+
+.lw-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--lw-amber);
+}

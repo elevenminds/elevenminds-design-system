@@ -1,0 +1,276 @@
+/* ============================================================
+   sub_systems — shared chrome
+   ------------------------------------------------------------
+   Layout & component primitives shared by every distributor
+   brand sheet. Each sub-system loads:
+     1. ../colors_and_type.css   (elevenminds base tokens)
+     2. ./tokens.css             (sub-brand overrides)
+     3. ../sub_systems/_subsystem.css
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--em-bg-1);
+  color: var(--em-fg-1);
+  font-family: var(--sb-font-sans, var(--em-font-sans));
+  font-size: var(--em-fs-body);
+  line-height: var(--em-lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.sb-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 32px 96px;
+}
+
+/* ---------- Top bar ---------- */
+.sb-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--em-border);
+  margin-bottom: 40px;
+}
+.sb-top .sb-crumb {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--em-fg-2);
+}
+.sb-top .sb-crumb a { color: inherit; text-decoration: none; }
+.sb-top .sb-crumb a:hover { color: var(--sb-primary, var(--em-ink)); }
+
+.sb-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sb-lockup img { height: 28px; display: block; }
+.sb-lockup-divider {
+  width: 1px; height: 20px; background: var(--em-border);
+}
+.sb-lockup .em-mark {
+  font-family: var(--em-font-sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--em-fg-2);
+}
+
+/* ---------- Hero ---------- */
+.sb-hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--em-border);
+  margin-bottom: 48px;
+}
+.sb-hero .sb-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sb-primary, var(--em-ink));
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.sb-hero h1 {
+  font-family: var(--sb-font-display, var(--sb-font-sans, var(--em-font-sans)));
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
+  color: var(--em-ink);
+}
+.sb-hero p.sb-lede {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--em-fg-2);
+  max-width: 56ch;
+  margin: 0;
+}
+.sb-hero .sb-mark-display {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  background: var(--sb-mark-bg, var(--em-bg-3));
+  color: var(--sb-mark-fg, var(--sb-primary));
+  border-radius: var(--sb-radius-mark, 0);
+}
+.sb-hero .sb-mark-display img { width: 75%; }
+.sb-hero .sb-mark-display svg { width: 75%; height: auto; }
+
+/* ---------- Section scaffolding ---------- */
+.sb-section { margin-bottom: 64px; }
+.sb-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--em-border);
+  margin-bottom: 24px;
+}
+.sb-section-head h2 {
+  font-family: var(--sb-font-sans, var(--em-font-sans));
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.sb-section-head .sb-tag {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--em-fg-2);
+}
+
+/* ---------- Color row ---------- */
+.sb-colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+.sb-swatch {
+  border: 1px solid var(--em-border);
+  border-radius: var(--sb-radius-card, 4px);
+  overflow: hidden;
+  background: #fff;
+}
+.sb-swatch-chip {
+  height: 96px;
+  display: block;
+  position: relative;
+}
+.sb-swatch-chip::after {
+  content: attr(data-role);
+  position: absolute;
+  bottom: 8px; left: 10px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  background: rgba(0,0,0,0.18);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.sb-swatch-chip[data-tone="light"]::after { color: rgba(0,0,0,0.6); background: rgba(255,255,255,0.5); }
+.sb-swatch-meta {
+  padding: 10px 12px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sb-swatch-meta strong { font-weight: 600; }
+.sb-swatch-meta code {
+  font-family: var(--em-font-mono);
+  font-size: 11px;
+  color: var(--em-fg-2);
+}
+
+/* ---------- Type specimen ---------- */
+.sb-type {
+  display: grid;
+  gap: 16px;
+}
+.sb-type-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  padding: 16px 0;
+  border-top: 1px solid var(--em-divider);
+  align-items: baseline;
+}
+.sb-type-row:first-child { border-top: none; }
+.sb-type-row .sb-type-meta {
+  font-size: 12px;
+  color: var(--em-fg-2);
+  font-family: var(--em-font-mono);
+}
+.sb-type-row .sb-type-sample {
+  color: var(--em-ink);
+}
+
+/* ---------- Cards / two-up ---------- */
+.sb-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.sb-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.sb-card {
+  border: 1px solid var(--em-border);
+  border-radius: var(--sb-radius-card, 4px);
+  padding: 24px;
+  background: #fff;
+}
+.sb-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+.sb-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--em-fg-2);
+  line-height: 1.5;
+}
+
+/* ---------- Buttons ---------- */
+.sb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font: 500 14px/1 var(--sb-font-sans, var(--em-font-sans));
+  border-radius: var(--sb-radius-btn, 4px);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sb-btn-primary {
+  background: var(--sb-primary, var(--em-ink));
+  color: var(--sb-on-primary, #fff);
+}
+.sb-btn-secondary {
+  background: #fff;
+  color: var(--em-ink);
+  border-color: var(--em-border-strong);
+}
+
+/* ---------- Tag ---------- */
+.sb-tag-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 999px;
+  background: var(--sb-primary-soft, var(--em-bg-3));
+  color: var(--sb-primary, var(--em-ink));
+}
+
+/* ---------- Footer ---------- */
+.sb-foot {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--em-border);
+  font-size: 12px;
+  color: var(--em-fg-2);
+  display: flex;
+  justify-content: space-between;
+}
+.sb-foot a { color: inherit; }

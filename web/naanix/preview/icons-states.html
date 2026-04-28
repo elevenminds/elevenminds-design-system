@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Icons — States</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:22px;background:#fff;font-family:var(--em-font-sans);display:flex;gap:38px;align-items:flex-end}
+  .cell{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .roundel{width:72px;height:72px;border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center}
+  .roundel svg.icon{width:42px;height:42px}
+
+  .rest{background:#E5E5E5; color:#111}
+
+  /* Annotated — same gray fill, cobalt 2px outline (drawn via box-shadow so it
+     sits outside the circle and doesn't shrink the icon). */
+  .annotated{background:#E5E5E5; box-shadow:0 0 0 2px #2847E0; color:#111;}
+
+  /* Active — negative: ink fill, icon strokes flipped to white via currentColor. */
+  .active{background:#111; color:#fff;}
+
+  .label{font-size:11px;color:#525252;font-family:'JetBrains Mono',monospace}
+  .note{font-size:12px;color:#737373;max-width:260px;line-height:1.5}
+</style>
+</head>
+<body>
+  <div class="cell">
+    <div class="roundel rest"><svg class="icon"><use href="../assets/em-icons.svg?v=2#em-cube"/></svg></div>
+    <span class="label">rest</span>
+  </div>
+  <div class="cell">
+    <div class="roundel annotated"><svg class="icon"><use href="../assets/em-icons.svg?v=2#em-cube"/></svg></div>
+    <span class="label">annotated</span>
+  </div>
+  <div class="cell">
+    <div class="roundel active"><svg class="icon"><use href="../assets/em-icons.svg?v=2#em-cube"/></svg></div>
+    <span class="label">active</span>
+  </div>
+  <div class="note">Three states. <b>Rest</b> — neutral gray roundel. <b>Annotated</b> — same roundel, cobalt 2&nbsp;px outline. <b>Active</b> — ink fill, icon strokes inverted to white (a negative).</div>
+</body>
+</html>

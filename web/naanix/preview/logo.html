@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Logo</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:24px; background:var(--em-bg-1); display:flex; gap:16px; align-items:stretch; }
+  .tile { flex:1; border:1px solid var(--em-border); border-radius:8px; display:flex; align-items:center; justify-content:center; padding:28px; }
+  .tile.dark { background:var(--em-ink); }
+  .tile img { width:80%; max-width:260px; height:auto; display:block; }
+  .caption { position:absolute; top:10px; left:14px; font-size:11px; color:var(--em-fg-2); letter-spacing:.08em; text-transform:uppercase;}
+  .tile { position:relative; }
+</style>
+</head>
+<body>
+  <div class="tile"><span class="caption">Ink on white</span><img src="../assets/logo-elevenminds.svg" alt="elevenminds"></div>
+  <div class="tile dark"><span class="caption" style="color:#aaa">White on ink</span><img src="../assets/logo-elevenminds-white.svg" alt="elevenminds"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Badges & Chips</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:22px;background:#fff;font-family:var(--em-font-sans);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .chip{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid #D4D4D4;color:#111;background:#fff}
+  .chip.dark{background:#111;color:#fff;border-color:#111}
+  .chip.blue{background:#E8EBFD;color:#1C33B8;border-color:#2847E0}
+  .chip.success{background:#E8F4EE;color:#2E8B57;border-color:#2E8B57}
+  .chip.danger{background:#FBEBED;color:#D7263D;border-color:#D7263D}
+  .chip.dot::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:6px;vertical-align:1px}
+  .badge{border:1px solid #111;background:#fff;color:#111;padding:2px 8px;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border-radius:3px;line-height:1.4}
+</style>
+</head>
+<body>
+  <span class="chip">Default</span>
+  <span class="chip dark">Active</span>
+  <span class="chip blue">Highlight</span>
+  <span class="chip success dot">Online</span>
+  <span class="chip danger dot">Offline</span>
+  <span class="badge">new</span>
+  <span class="badge">beta</span>
+</body>
+</html>

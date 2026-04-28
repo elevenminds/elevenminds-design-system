@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Icons — all (em-icons sprite)</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:32px 24px;background:#fff;font-family:var(--em-font-sans);color:#111}
+  header{max-width:1100px;margin:0 auto 28px}
+  header h1{font-size:22px;font-weight:500;letter-spacing:-.01em;margin:0 0 6px}
+  header p{margin:0;font-size:13px;color:#525252;max-width:720px}
+  header code{background:#F5F5F5;padding:2px 6px;border-radius:4px;font-size:12px;color:#111}
+  main{max-width:1100px;margin:0 auto}
+  h2{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:#525252;letter-spacing:.08em;text-transform:uppercase;margin:28px 0 14px;padding-bottom:6px;border-bottom:1px dashed #D4D4D4}
+  .grid{display:grid;grid-template-columns:repeat(10,1fr);gap:14px;align-items:start}
+  .cell{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .roundel{width:56px;height:56px;border-radius:50%;background:#E5E5E5;display:flex;align-items:center;justify-content:center}
+  .roundel svg{width:32px;height:32px;color:#111}
+  .label{font-size:10px;color:#525252;font-family:'JetBrains Mono',monospace;text-align:center;line-height:1.2}
+</style>
+</head>
+<body>
+
+<!-- sprite: inline so symbols render everywhere -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    
+    <symbol id="em-sticky-flag" viewBox="0 0 20 18">
+      <path d="M1 1 H17 V11 H7 L3 16 V11 H1 Z" fill="#2847E0" stroke="#111" stroke-width="1.2" stroke-linejoin="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-clock" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="14" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M24 15 V24 L30 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-cube" viewBox="0 0 48 48">
+      <path d="M24 10 L36 16 L36 30 L24 36 L12 30 L12 16 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M12 16 L24 22 L36 16 M24 22 V36" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-seat" viewBox="0 0 48 48">
+      <path d="M15 14 H33 V26 H15 Z" fill="none" stroke="#111" stroke-width="1.8"></path>
+      <path d="M13 26 H35 M17 26 V36 M31 26 V36" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-person-seat" viewBox="0 0 48 48">
+      <circle cx="24" cy="14" r="4" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M18 22 H30 V30 H18 Z" fill="none" stroke="#111" stroke-width="1.8"></path>
+      <path d="M16 30 H32 M20 30 V38 M28 30 V38" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-grid" viewBox="0 0 48 48">
+      <rect x="11" y="11" width="8" height="8" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="21" y="11" width="8" height="8" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="31" y="11" width="6" height="8" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="11" y="21" width="8" height="8" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="21" y="21" width="8" height="8" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="31" y="21" width="6" height="8" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="11" y="31" width="8" height="6" fill="none" stroke="#111" stroke-width="1.8"></rect>
+    </symbol>
+
+    
+    <symbol id="em-pie" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="12" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M24 12 A12 12 0 0 1 36 24 L24 24 Z" fill="#111" stroke="#111" stroke-width="1.8"></path>
+    </symbol>
+
+    
+    <symbol id="em-footsteps" viewBox="0 0 48 48">
+      <ellipse cx="18" cy="18" rx="4" ry="6" fill="none" stroke="#111" stroke-width="1.8"></ellipse>
+      <circle cx="15" cy="11" r="1.8" fill="#111"></circle>
+      <circle cx="20" cy="11" r="1.8" fill="#111"></circle>
+      <ellipse cx="30" cy="30" rx="4" ry="6" fill="none" stroke="#111" stroke-width="1.8"></ellipse>
+      <circle cx="27" cy="23" r="1.8" fill="#111"></circle>
+      <circle cx="32" cy="23" r="1.8" fill="#111"></circle>
+    </symbol>
+
+    
+    <symbol id="em-arrows" viewBox="0 0 48 48">
+      <path d="M18 12 V34 M18 12 L14 16 M18 12 L22 16" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M30 34 V12 M30 34 L26 30 M30 34 L34 30" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-desk" viewBox="0 0 48 48">
+      <path d="M10 20 H38 L34 28 H14 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M14 28 V38 M34 28 V38" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-survey" viewBox="0 0 48 48">
+      <rect x="14" y="12" width="20" height="26" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="19" y="10" width="10" height="4" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <path d="M18 22 H30 M18 27 H30 M18 32 H26" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-size" viewBox="0 0 48 48">
+      <path d="M10 30 L24 18 L38 30" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M10 34 L38 34" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      <path d="M14 34 V30 M20 34 V30 M24 34 V28 M28 34 V30 M34 34 V30" stroke="#111" stroke-width="1.5"></path>
+    </symbol>
+
+    
+    <symbol id="em-interaction" viewBox="0 0 48 48">
+      <circle cx="19" cy="24" r="8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="29" cy="24" r="8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+    </symbol>
+
+    
+    <symbol id="em-mood" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="12" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="20" cy="22" r="1.4" fill="#111"></circle>
+      <circle cx="28" cy="22" r="1.4" fill="#111"></circle>
+      <path d="M18 28 Q24 33 30 28" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-thermal" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="6" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <g stroke="#111" stroke-width="1.8" stroke-linecap="round">
+        <path d="M24 10 V14"></path><path d="M24 34 V38"></path>
+        <path d="M10 24 H14"></path><path d="M34 24 H38"></path>
+        <path d="M14 14 L17 17"></path><path d="M31 31 L34 34"></path>
+        <path d="M34 14 L31 17"></path><path d="M14 34 L17 31"></path>
+      </g>
+    </symbol>
+
+    
+    <symbol id="em-light" viewBox="0 0 48 48">
+      <path d="M16 20 L24 10 L32 20 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M24 20 V36" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      <path d="M24 10 V6" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-noise" viewBox="0 0 48 48">
+      <path d="M14 20 H18 L24 14 V34 L18 28 H14 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M28 18 Q32 24 28 30" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      <path d="M32 14 Q38 24 32 34" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-walk" viewBox="0 0 48 48">
+      <circle cx="24" cy="12" r="3" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M24 15 L20 24 L18 34 M24 15 L28 22 L32 20 M20 24 L26 34" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-food" viewBox="0 0 48 48">
+      <path d="M18 10 V38 M15 10 V18 M21 10 V18 M18 18 V22" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      <path d="M30 10 Q34 14 33 22 L30 22 V38" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-coffee" viewBox="0 0 48 48">
+      <path d="M12 18 H32 V30 Q32 36 22 36 Q12 36 12 30 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M32 22 H36 Q40 22 40 26 Q40 30 36 30 H32" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M18 10 Q20 12 18 14 M24 10 Q26 12 24 14" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-phone" viewBox="0 0 48 48">
+      <path d="M12 14 Q12 10 16 10 L20 10 L22 18 L18 21 Q22 28 27 31 L30 27 L38 29 L38 33 Q38 37 34 37 Q22 37 14 29 Q12 24 12 14 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-printer" viewBox="0 0 48 48">
+      <rect x="14" y="10" width="20" height="10" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="10" y="20" width="28" height="12" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="14" y="28" width="20" height="10" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <circle cx="32" cy="25" r="1.5" fill="#111"></circle>
+    </symbol>
+
+    
+    <symbol id="em-eye" viewBox="0 0 48 48">
+      <path d="M8 24 Q16 14 24 14 Q32 14 40 24 Q32 34 24 34 Q16 34 8 24 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="24" cy="24" r="4" fill="none" stroke="#111" stroke-width="1.8"></circle>
+    </symbol>
+
+    
+    <symbol id="em-honeycomb" viewBox="0 0 48 48">
+      <g fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round">
+        <path d="M17 10 L22 12 L22 18 L17 20 L12 18 L12 12 Z"></path>
+        <path d="M31 10 L36 12 L36 18 L31 20 L26 18 L26 12 Z"></path>
+        <path d="M24 21 L29 23 L29 29 L24 31 L19 29 L19 23 Z"></path>
+        <path d="M17 32 L22 34 L22 40 L17 42 L12 40 L12 34 Z"></path>
+        <path d="M31 32 L36 34 L36 40 L31 42 L26 40 L26 34 Z"></path>
+      </g>
+    </symbol>
+
+    
+    <symbol id="em-calc" viewBox="0 0 48 48">
+      <rect x="14" y="10" width="20" height="28" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="17" y="13" width="14" height="5" fill="none" stroke="#111" stroke-width="1.5"></rect>
+      <g fill="#111"><circle cx="19" cy="24" r="1.3"></circle><circle cx="24" cy="24" r="1.3"></circle><circle cx="29" cy="24" r="1.3"></circle>
+      <circle cx="19" cy="29" r="1.3"></circle><circle cx="24" cy="29" r="1.3"></circle><circle cx="29" cy="29" r="1.3"></circle>
+      <circle cx="19" cy="34" r="1.3"></circle><circle cx="24" cy="34" r="1.3"></circle><circle cx="29" cy="34" r="1.3"></circle></g>
+    </symbol>
+
+    
+    <symbol id="em-monitor" viewBox="0 0 48 48">
+      <rect x="10" y="12" width="28" height="18" rx="1" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <path d="M18 30 L18 36 M30 30 L30 36 M14 36 H34" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      <circle cx="24" cy="21" r="3.5" fill="none" stroke="#111" stroke-width="1.5"></circle>
+    </symbol>
+
+    
+    <symbol id="em-projector" viewBox="0 0 48 48">
+      <rect x="10" y="18" width="22" height="12" rx="1" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <circle cx="26" cy="24" r="3" fill="none" stroke="#111" stroke-width="1.6"></circle>
+      <path d="M32 22 L40 18 M32 26 L40 30" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-whiteboard" viewBox="0 0 48 48">
+      <rect x="10" y="12" width="28" height="18" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <path d="M24 30 V38 M18 38 H30" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      <path d="M16 18 H28 M16 23 H24" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-screens" viewBox="0 0 48 48">
+      <rect x="8" y="14" width="14" height="10" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="18" y="18" width="14" height="10" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="28" y="22" width="12" height="10" fill="none" stroke="#111" stroke-width="1.8"></rect>
+    </symbol>
+
+    
+    <symbol id="em-plug" viewBox="0 0 48 48">
+      <path d="M20 12 V18 M28 12 V18" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      <path d="M14 18 H34 V24 Q34 32 24 32 Q14 32 14 24 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M24 32 V40" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+      <path d="M16 16 L21 21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-plus" viewBox="0 0 24 24">
+      <path d="M12 5 V19 M5 12 H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-menu" viewBox="0 0 24 24">
+      <path d="M4 7 H20 M4 12 H20 M4 17 H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-arrow-right" viewBox="0 0 24 24">
+      <path d="M5 12 H19 M14 7 L19 12 L14 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="em-close" viewBox="0 0 24 24">
+      <path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-bell" viewBox="0 0 24 24">
+      <path d="M6 17 H18 L16 14 V11 Q16 7 12 7 Q8 7 8 11 V14 Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M10 20 Q12 22 14 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="9" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+      <path d="M5 20 Q5 14 12 14 Q19 14 19 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-check" viewBox="0 0 24 24">
+      <path d="M5 12 L10 17 L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-chat" viewBox="0 0 48 48">
+      <path d="M10 12 H38 V30 H22 L14 36 V30 H10 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="18" cy="21" r="1.6" fill="#111"></circle>
+      <circle cx="24" cy="21" r="1.6" fill="#111"></circle>
+      <circle cx="30" cy="21" r="1.6" fill="#111"></circle>
+    </symbol>
+    <symbol id="em-chat-bubbles" viewBox="0 0 48 48">
+      <path d="M8 12 H30 V24 H18 L12 29 V24 H8 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M20 22 H40 V34 H34 L30 38 V34 H20 Z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+    </symbol>
+
+    
+    <symbol id="em-truck" viewBox="0 0 48 48">
+      <path d="M4 16 H28 V32 H4 Z M28 20 H36 L42 26 V32 H28 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="12" cy="34" r="3.2" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="34" cy="34" r="3.2" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M30 24 H38" stroke="#111" stroke-width="1.5"></path>
+    </symbol>
+    <symbol id="em-truck-top" viewBox="0 0 48 48">
+      <rect x="14" y="8" width="20" height="12" rx="1" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <rect x="12" y="20" width="24" height="22" rx="2" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <path d="M18 24 H30" stroke="#111" stroke-width="1.5"></path>
+    </symbol>
+    <symbol id="em-truck-arrive" viewBox="0 0 48 48">
+      <path d="M6 20 H22 V32 H6 Z M22 22 H30 L34 26 V32 H22 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="12" cy="34" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="28" cy="34" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M44 14 L38 14 M38 10 L34 14 L38 18" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="em-truck-depart" viewBox="0 0 48 48">
+      <path d="M6 20 H22 V32 H6 Z M22 22 H30 L34 26 V32 H22 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="12" cy="34" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="28" cy="34" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M38 14 L44 14 M40 10 L44 14 L40 18" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="em-truck-loading" viewBox="0 0 48 48">
+      <path d="M4 20 H24 V34 H4 Z M24 24 H32 L38 30 V34 H24 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="10" cy="36" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="30" cy="36" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M14 6 V14 M10 10 L14 14 L18 10" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="em-truck-unloading" viewBox="0 0 48 48">
+      <path d="M4 20 H24 V34 H4 Z M24 24 H32 L38 30 V34 H24 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="10" cy="36" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="30" cy="36" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M14 14 V6 M10 10 L14 6 L18 10" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="em-truck-parked" viewBox="0 0 48 48">
+      <path d="M4 20 H22 V32 H4 Z M22 22 H30 L34 26 V32 H22 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="10" cy="34" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="28" cy="34" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="40" cy="12" r="5.5" fill="none" stroke="#111" stroke-width="1.6"></circle>
+      <path d="M38 9 V16 M38 9 H41 Q43 9 43 11 Q43 13 41 13 H38" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="em-truck-transit" viewBox="0 0 48 48">
+      <path d="M12 20 H30 V32 H12 Z M30 22 H38 L42 26 V32 H30 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="18" cy="34" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="36" cy="34" r="2.8" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <path d="M2 22 H8 M2 26 H10 M2 30 H8" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-truck-route" viewBox="0 0 48 48">
+      <path d="M4 38 Q12 38 14 30 Q16 22 24 22 Q32 22 34 14 Q36 6 44 6" fill="none" stroke="#111" stroke-width="1.6" stroke-dasharray="3 3" stroke-linecap="round"></path>
+      <path d="M8 30 H22 V38 H8 Z M22 32 H28 L31 35 V38 H22 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="12" cy="40" r="2.2" fill="none" stroke="#111" stroke-width="1.6"></circle>
+      <circle cx="26" cy="40" r="2.2" fill="none" stroke="#111" stroke-width="1.6"></circle>
+      <circle cx="44" cy="6" r="2.5" fill="#111"></circle>
+    </symbol>
+    <symbol id="em-truck-geofence" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="17" fill="none" stroke="#111" stroke-width="1.6" stroke-dasharray="2 3"></circle>
+      <path d="M10 22 H24 V30 H10 Z M24 24 H30 L33 27 V30 H24 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <circle cx="14" cy="32" r="2.2" fill="none" stroke="#111" stroke-width="1.6"></circle>
+      <circle cx="28" cy="32" r="2.2" fill="none" stroke="#111" stroke-width="1.6"></circle>
+    </symbol>
+    <symbol id="em-speed" viewBox="0 0 48 48">
+      <path d="M8 30 A16 16 0 0 1 40 30" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      <path d="M24 30 L32 18" stroke="#111" stroke-width="2" stroke-linecap="round"></path>
+      <circle cx="24" cy="30" r="2" fill="#111"></circle>
+      <path d="M10 34 H14 M34 34 H38 M24 14 V18" stroke="#111" stroke-width="1.4" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-fuel" viewBox="0 0 48 48">
+      <rect x="10" y="10" width="16" height="28" fill="none" stroke="#111" stroke-width="1.8"></rect>
+      <path d="M10 18 H26 M14 14 H22" stroke="#111" stroke-width="1.5" stroke-linecap="round"></path>
+      <path d="M26 20 H32 V34 Q32 37 35 37 Q38 37 38 34 V16 L34 12" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="em-driver" viewBox="0 0 48 48">
+      <circle cx="24" cy="14" r="4" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="24" cy="32" r="10" fill="none" stroke="#111" stroke-width="1.8"></circle>
+      <circle cx="24" cy="32" r="2" fill="#111"></circle>
+      <path d="M24 22 V24 M16 34 L18 34 M32 34 L30 34" stroke="#111" stroke-width="1.5" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="em-dock" viewBox="0 0 48 48">
+      <path d="M6 14 H30 V30 H6 Z" fill="none" stroke="#111" stroke-width="1.8"></path>
+      <path d="M10 30 V36 M14 30 V36 M18 30 V36 M22 30 V36 M26 30 V36" stroke="#111" stroke-width="1.5" stroke-linecap="round"></path>
+      <path d="M34 18 H42 V30 H34 Z" fill="none" stroke="#111" stroke-width="1.8"></path>
+      <circle cx="36" cy="32" r="1.8" fill="none" stroke="#111" stroke-width="1.5"></circle>
+      <circle cx="40" cy="32" r="1.8" fill="none" stroke="#111" stroke-width="1.5"></circle>
+    </symbol>
+    <symbol id="em-truck-pin" viewBox="0 0 48 48">
+      <path d="M24 6 C14 6 10 14 10 20 C10 28 24 42 24 42 C24 42 38 28 38 20 C38 14 34 6 24 6 Z" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M16 19 H26 V25 H16 Z M26 20 H30 L32 22 V25 H26 Z" fill="none" stroke="#111" stroke-width="1.4" stroke-linejoin="round"></path>
+      <circle cx="19" cy="26" r="1.4" fill="#111"></circle>
+      <circle cx="29" cy="26" r="1.4" fill="#111"></circle>
+    </symbol>
+  </defs></svg>
+
+<header>
+  <h1>em-icons — full sprite</h1>
+  <p>All 55 symbols from <code>assets/em-icons.svg</code>. Reference any glyph from your own HTML with <code>&lt;svg&gt;&lt;use href="assets/em-icons.svg?v=2#em-truck"/&gt;&lt;/svg&gt;</code>.</p>
+</header>
+
+<main>
+<h2>Brand</h2>
+<div class="grid">
+  <div class="cell"><div class="roundel"><svg><use href="#em-sticky-flag" color="#111"/></svg></div><span class="label">sticky-flag</span></div>
+</div>
+
+<h2>Workplace analytics</h2>
+<div class="grid">
+  <div class="cell"><div class="roundel"><svg><use href="#em-clock" color="#111"/></svg></div><span class="label">clock</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-cube" color="#111"/></svg></div><span class="label">cube</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-seat" color="#111"/></svg></div><span class="label">seat</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-person-seat" color="#111"/></svg></div><span class="label">person-seat</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-grid" color="#111"/></svg></div><span class="label">grid</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-pie" color="#111"/></svg></div><span class="label">pie</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-footsteps" color="#111"/></svg></div><span class="label">footsteps</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-arrows" color="#111"/></svg></div><span class="label">arrows</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-desk" color="#111"/></svg></div><span class="label">desk</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-survey" color="#111"/></svg></div><span class="label">survey</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-size" color="#111"/></svg></div><span class="label">size</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-interaction" color="#111"/></svg></div><span class="label">interaction</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-mood" color="#111"/></svg></div><span class="label">mood</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-thermal" color="#111"/></svg></div><span class="label">thermal</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-light" color="#111"/></svg></div><span class="label">light</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-noise" color="#111"/></svg></div><span class="label">noise</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-walk" color="#111"/></svg></div><span class="label">walk</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-food" color="#111"/></svg></div><span class="label">food</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-coffee" color="#111"/></svg></div><span class="label">coffee</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-honeycomb" color="#111"/></svg></div><span class="label">honeycomb</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-eye" color="#111"/></svg></div><span class="label">eye</span></div>
+</div>
+
+<h2>Hardware / devices</h2>
+<div class="grid">
+  <div class="cell"><div class="roundel"><svg><use href="#em-phone" color="#111"/></svg></div><span class="label">phone</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-printer" color="#111"/></svg></div><span class="label">printer</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-calc" color="#111"/></svg></div><span class="label">calc</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-monitor" color="#111"/></svg></div><span class="label">monitor</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-projector" color="#111"/></svg></div><span class="label">projector</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-whiteboard" color="#111"/></svg></div><span class="label">whiteboard</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-screens" color="#111"/></svg></div><span class="label">screens</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-plug" color="#111"/></svg></div><span class="label">plug</span></div>
+</div>
+
+<h2>UI · 24px line</h2>
+<div class="grid">
+  <div class="cell"><div class="roundel"><svg><use href="#em-search" color="#111"/></svg></div><span class="label">search</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-plus" color="#111"/></svg></div><span class="label">plus</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-menu" color="#111"/></svg></div><span class="label">menu</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-arrow-right" color="#111"/></svg></div><span class="label">arrow-right</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-close" color="#111"/></svg></div><span class="label">close</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-bell" color="#111"/></svg></div><span class="label">bell</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-user" color="#111"/></svg></div><span class="label">user</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-check" color="#111"/></svg></div><span class="label">check</span></div>
+</div>
+
+<h2>Chat</h2>
+<div class="grid">
+  <div class="cell"><div class="roundel"><svg><use href="#em-chat" color="#111"/></svg></div><span class="label">chat</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-chat-bubbles" color="#111"/></svg></div><span class="label">chat-bubbles</span></div>
+</div>
+
+<h2>RTLS · Trucks</h2>
+<div class="grid">
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck" color="#111"/></svg></div><span class="label">truck</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-top" color="#111"/></svg></div><span class="label">truck-top</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-arrive" color="#111"/></svg></div><span class="label">truck-arrive</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-depart" color="#111"/></svg></div><span class="label">truck-depart</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-loading" color="#111"/></svg></div><span class="label">truck-loading</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-unloading" color="#111"/></svg></div><span class="label">truck-unloading</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-parked" color="#111"/></svg></div><span class="label">truck-parked</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-transit" color="#111"/></svg></div><span class="label">truck-transit</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-route" color="#111"/></svg></div><span class="label">truck-route</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-geofence" color="#111"/></svg></div><span class="label">truck-geofence</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-truck-pin" color="#111"/></svg></div><span class="label">truck-pin</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-speed" color="#111"/></svg></div><span class="label">speed</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-fuel" color="#111"/></svg></div><span class="label">fuel</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-driver" color="#111"/></svg></div><span class="label">driver</span></div>
+  <div class="cell"><div class="roundel"><svg><use href="#em-dock" color="#111"/></svg></div><span class="label">dock</span></div>
+</div>
+
+
+</main>
+
+</body>
+</html>

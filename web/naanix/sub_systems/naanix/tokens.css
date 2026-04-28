@@ -1,0 +1,75 @@
+/* ============================================================
+   NAANIX — sub-system tokens
+   ------------------------------------------------------------
+   Fleet operations platform. Distributor-branded surface of
+   the elevenminds RTLS platform. Map-first, alert-driven,
+   high data density. Spanish-language by default.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- Naanix brand ---------- */
+  --nx-red:        #AB160F;   /* primary red — extracted from logo            */
+  --nx-red-deep:   #82110C;
+  --nx-red-soft:   #FBEAE9;
+  --nx-slate:      #282E35;   /* wordmark slate                                */
+  --nx-slate-2:    #3C4451;
+
+  /* Live-ops alert ladder (sampled from real product UI) */
+  --nx-alert-red:    #D7263D;
+  --nx-alert-amber:  #F08A1F;
+  --nx-alert-yellow: #F5C518;
+  --nx-alert-green:  #2E8B57;
+  --nx-alert-teal:   #2C8A8C;
+  --nx-alert-magenta:#D6266D;   /* selected unit pop-up                        */
+
+  /* Surfaces */
+  --nx-bg:         #FFFFFF;
+  --nx-bg-alt:     #F6F6F4;
+  --nx-bg-data:    #FAFAF9;
+  --nx-border:     #E2E2DE;
+  --nx-border-strong: #C7C7C2;
+
+  /* Sub-system overrides consumed by _subsystem.css */
+  --sb-primary:        var(--nx-red);
+  --sb-primary-deep:   var(--nx-red-deep);
+  --sb-primary-soft:   var(--nx-red-soft);
+  --sb-on-primary:     #FFFFFF;
+  --sb-mark-bg:        var(--nx-slate);
+  --sb-mark-fg:        #FFFFFF;
+  --sb-radius-mark:    0;
+  --sb-radius-card:    2px;
+  --sb-radius-btn:     2px;
+  --sb-font-sans:      'Barlow', 'Inter', system-ui, sans-serif;
+  --sb-font-display:   'Barlow', 'Inter', system-ui, sans-serif;
+}
+
+/* ---------- Naanix-specific utility classes ---------- */
+.nx-eyebrow {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--nx-red);
+}
+
+.nx-alert-bar {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--nx-border);
+}
+.nx-alert-bar > span {
+  width: 28px;
+  height: 36px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+}

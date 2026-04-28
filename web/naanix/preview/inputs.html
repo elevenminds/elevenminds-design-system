@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:22px;background:#fff;font-family:var(--em-font-sans);display:grid;grid-template-columns:1fr 1fr;gap:16px 22px}
+  label{font-size:11px;color:#737373;font-weight:600;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:6px}
+  input,select{font-family:inherit;font-size:14px;padding:10px 12px;border-radius:8px;border:1px solid #D4D4D4;background:#fff;width:100%;box-sizing:border-box;color:#111;outline:none}
+  input:focus{border-color:#111}
+  .err input{border-color:#D7263D}
+  .hint{font-size:12px;color:#737373;margin-top:4px}
+  .hint.err{color:#D7263D}
+  .field-hl input{border-color:#111;box-shadow:0 0 0 3px #2847E0}
+</style>
+</head>
+<body>
+  <div><label>Space name</label><input value="Floor 2E · North wing"></div>
+  <div class="field-hl"><label>Capacity</label><input value="24"><div class="hint">Focus: cobalt ring.</div></div>
+  <div><label>Floor</label><select><option>Floor 1</option><option>Floor 2</option></select></div>
+  <div class="err"><label>ID</label><input value="em-02e-#"><div class="hint err">Use alphanumeric only.</div></div>
+</body>
+</html>

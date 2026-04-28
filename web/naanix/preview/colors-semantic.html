@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Colors — Semantic</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:20px; background:#fff; font-family:var(--em-font-sans); }
+  .row { display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
+  .sw { border-radius:8px; padding:14px; height:90px; display:flex; flex-direction:column; justify-content:space-between; color:#fff; }
+  .sw .n { font-weight:600; font-size:13px; }
+  .sw .h { font-family:var(--em-font-mono); font-size:11px; opacity:.85; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw" style="background:#2E8B57"><span class="n">Success</span><span class="h">#2E8B57</span></div>
+    <div class="sw" style="background:#E0A800; color:#111"><span class="n">Warning</span><span class="h">#E0A800</span></div>
+    <div class="sw" style="background:#D7263D"><span class="n">Danger</span><span class="h">#D7263D</span></div>
+    <div class="sw" style="background:#2D6CDF"><span class="n">Info</span><span class="h">#2D6CDF</span></div>
+  </div>
+</body>
+</html>

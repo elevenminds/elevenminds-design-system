@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:22px;background:#FAFAFA;font-family:var(--em-font-sans);display:flex;gap:14px}
+  .card{flex:1;background:#fff;border:1px solid #E5E5E5;border-radius:8px;padding:14px;box-shadow:0 1px 2px rgba(17,17,17,.06);display:flex;flex-direction:column;gap:6px;position:relative}
+  .eyebrow{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#737373;font-weight:600}
+  .metric{font-size:32px;font-weight:700;letter-spacing:-.02em}
+  .delta{font-size:12px;color:#2E8B57;font-family:'JetBrains Mono',monospace}
+  .sub{font-size:12px;color:#525252}
+  .flag{position:absolute;top:10px;right:10px;background:#fff;border:1px solid #111;padding:2px 7px;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#111;border-radius:3px;line-height:1.4}
+</style>
+</head>
+<body>
+  <div class="card"><span class="eyebrow">Occupancy</span><span class="metric">72%</span><span class="delta">↑ 4% vs last week</span><span class="sub">Floor 2E · Mon–Fri</span></div>
+  <div class="card"><span class="flag">peak 2–4pm</span><span class="eyebrow">Utilization</span><span class="metric">58%</span><span class="delta">↑ 2%</span><span class="sub">384 of 660 seats</span></div>
+
+  <!-- note: flag is a neutral uppercase tag — not a cursive sticky -->
+
+  <div class="card"><span class="eyebrow">ft² / person</span><span class="metric">142</span><span class="delta" style="color:#D7263D">↓ 8</span><span class="sub">Target: 160</span></div>
+</body>
+</html>

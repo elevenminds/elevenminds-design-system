@@ -1,0 +1,217 @@
+/* ============================================================
+   elevenminds — Colors & Type
+   ------------------------------------------------------------
+   Core tokens for the elevenminds brand. Load this file once
+   in any page and use the CSS variables or utility classes.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Brand primary ---------- */
+  --em-blue:          #2847E0;   /* editorial cobalt — primary accent */
+  --em-blue-deep:     #1C33B8;   /* hover / pressed variant                  */
+  --em-blue-soft:     #E8EBFD;   /* washes, tinted backgrounds               */
+  --em-ink:           #111111;   /* primary text / logo ink                  */
+  --em-ink-soft:      #2A2A2A;   /* heavy body                               */
+
+  /* ---------- Neutrals (warm-leaning gray scale) ---------- */
+  --em-gray-50:       #FAFAFA;
+  --em-gray-100:      #F2F2F2;
+  --em-gray-200:      #E5E5E5;   /* icon roundel background                    */
+  --em-gray-300:      #D4D4D4;
+  --em-gray-400:      #A3A3A3;
+  --em-gray-500:      #737373;
+  --em-gray-600:      #525252;
+  --em-gray-700:      #404040;
+  --em-gray-800:      #262626;
+  --em-gray-900:      #171717;
+  --em-white:         #FFFFFF;
+
+  /* ---------- Semantic foreground / background ---------- */
+  --em-fg-1:          var(--em-ink);        /* primary text                   */
+  --em-fg-2:          var(--em-gray-600);   /* secondary text                 */
+  --em-fg-3:          var(--em-gray-400);   /* tertiary / placeholder         */
+  --em-fg-inverse:    var(--em-white);
+
+  --em-bg-1:          var(--em-white);      /* page                           */
+  --em-bg-2:          var(--em-gray-50);    /* subtle alt band                */
+  --em-bg-3:          var(--em-gray-100);   /* chip / card                    */
+  --em-bg-inverse:    var(--em-ink);
+
+  --em-border:        var(--em-gray-200);
+  --em-border-strong: var(--em-gray-300);
+  --em-divider:       var(--em-gray-100);
+
+  /* ---------- Status (used sparingly) ---------- */
+  --em-success:       #2E8B57;
+  --em-warning:       #E0A800;
+  --em-danger:        #D7263D;
+  --em-info:          var(--em-blue);  /* info state reuses brand blue */
+
+  /* ---------- Type families ---------- */
+  --em-font-sans:     'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --em-font-mono:     'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---------- Type scale ---------- */
+  --em-fs-display:    clamp(48px, 6vw, 88px);
+  --em-fs-h1:         clamp(36px, 4vw, 56px);
+  --em-fs-h2:         clamp(28px, 3vw, 40px);
+  --em-fs-h3:         22px;
+  --em-fs-h4:         18px;
+  --em-fs-body:       16px;
+  --em-fs-small:      14px;
+  --em-fs-caption:    12px;
+  --em-fs-micro:      11px;
+
+  --em-lh-tight:      1.05;
+  --em-lh-heading:    1.15;
+  --em-lh-body:       1.55;
+  --em-lh-loose:      1.7;
+
+  --em-tracking-tight:  -0.02em;
+  --em-tracking-normal: 0;
+  --em-tracking-wide:   0.08em;   /* small-caps labels, eyebrows */
+
+  /* ---------- Spacing (4px base) ---------- */
+  --em-sp-0:  0;
+  --em-sp-1:  4px;
+  --em-sp-2:  8px;
+  --em-sp-3:  12px;
+  --em-sp-4:  16px;
+  --em-sp-5:  24px;
+  --em-sp-6:  32px;
+  --em-sp-7:  48px;
+  --em-sp-8:  64px;
+  --em-sp-9:  96px;
+  --em-sp-10: 128px;
+
+  /* ---------- Radii ---------- */
+  --em-radius-sm:    4px;
+  --em-radius-md:    8px;
+  --em-radius-lg:    16px;
+  --em-radius-pill:  999px;
+  --em-radius-round: 50%;     /* icon roundels, avatars */
+
+  /* ---------- Elevation ---------- */
+  --em-shadow-0: none;
+  --em-shadow-1: 0 1px 2px rgba(17,17,17,0.06), 0 1px 1px rgba(17,17,17,0.04);
+  --em-shadow-2: 0 4px 12px rgba(17,17,17,0.08), 0 1px 2px rgba(17,17,17,0.04);
+  --em-shadow-3: 0 12px 32px rgba(17,17,17,0.12), 0 2px 6px rgba(17,17,17,0.06);
+
+  /* ---------- Motion ---------- */
+  --em-ease-out:     cubic-bezier(0.22, 0.61, 0.36, 1);
+  --em-ease-in-out:  cubic-bezier(0.65, 0.05, 0.36, 1);
+  --em-dur-fast:     120ms;
+  --em-dur-med:      220ms;
+  --em-dur-slow:     420ms;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+html, body {
+  font-family: var(--em-font-sans);
+  font-size: var(--em-fs-body);
+  line-height: var(--em-lh-body);
+  color: var(--em-fg-1);
+  background: var(--em-bg-1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================================
+   Semantic typography
+   ============================================================ */
+
+.em-display,
+h1.em-display {
+  font-size: var(--em-fs-display);
+  line-height: var(--em-lh-tight);
+  font-weight: 700;
+  letter-spacing: var(--em-tracking-tight);
+  color: var(--em-fg-1);
+}
+
+.em-h1, h1 {
+  font-size: var(--em-fs-h1);
+  line-height: var(--em-lh-heading);
+  font-weight: 700;
+  letter-spacing: var(--em-tracking-tight);
+}
+
+.em-h2, h2 {
+  font-size: var(--em-fs-h2);
+  line-height: var(--em-lh-heading);
+  font-weight: 600;
+  letter-spacing: var(--em-tracking-tight);
+}
+
+.em-h3, h3 {
+  font-size: var(--em-fs-h3);
+  line-height: var(--em-lh-heading);
+  font-weight: 600;
+}
+
+.em-h4, h4 {
+  font-size: var(--em-fs-h4);
+  line-height: var(--em-lh-heading);
+  font-weight: 600;
+}
+
+.em-body, p {
+  font-size: var(--em-fs-body);
+  line-height: var(--em-lh-body);
+  color: var(--em-fg-1);
+}
+
+.em-body-lg {
+  font-size: 18px;
+  line-height: var(--em-lh-body);
+}
+
+.em-small, small {
+  font-size: var(--em-fs-small);
+  color: var(--em-fg-2);
+}
+
+.em-caption {
+  font-size: var(--em-fs-caption);
+  color: var(--em-fg-2);
+  line-height: 1.4;
+}
+
+.em-eyebrow {
+  font-size: var(--em-fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--em-tracking-wide);
+  font-weight: 600;
+  color: var(--em-fg-2);
+}
+
+.em-code, code {
+  font-family: var(--em-font-mono);
+  font-size: 0.92em;
+  background: var(--em-bg-3);
+  padding: 1px 6px;
+  border-radius: var(--em-radius-sm);
+}
+
+/* em-hand utility removed — brand no longer uses a handwritten face.
+   Use .em-mono or a small uppercase Inter label instead. */
+
+/* ============================================================
+   Utility
+   ============================================================ */
+
+.em-accent-blue { background: var(--em-blue); color: var(--em-white); }
+.em-accent-blue-soft { background: var(--em-blue-soft); color: var(--em-ink); }
+.em-accent-ink  { background: var(--em-ink); color: var(--em-white); }
+
+/* em-highlight — inline editorial highlight for a word of running copy.
+   Use on a <span>. Produces a clean bottom-60% blue wash. */
+.em-highlight {
+  background: linear-gradient(transparent 55%, var(--em-blue-soft) 55%);
+  padding: 0 2px;
+}

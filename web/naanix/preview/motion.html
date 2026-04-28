@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Motion</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:22px;background:#fff;font-family:var(--em-font-sans);display:flex;gap:22px;align-items:center}
+  .demo{display:flex;flex-direction:column;gap:8px;align-items:center}
+  .btn{padding:10px 16px;background:#111;color:#fff;border-radius:8px;transition:transform 120ms cubic-bezier(0.22,0.61,0.36,1),background 220ms;cursor:pointer}
+  .btn:hover{background:#2A2A2A}
+  .btn:active{transform:scale(.98)}
+  .label{font-size:11px;color:#737373;font-family:'JetBrains Mono',monospace}
+  .card{width:160px;padding:14px;border:1px solid #E5E5E5;border-radius:8px;background:#fff;transition:transform 220ms cubic-bezier(0.22,0.61,0.36,1),box-shadow 220ms}
+  .card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(17,17,17,.08)}
+  .hl{font-size:22px;font-weight:600}
+  .hl span{background:linear-gradient(transparent 55%, #E8EBFD 55%);padding:0 2px;animation:fade 2.4s ease-in-out infinite}
+  @keyframes fade{0%,100%{background:linear-gradient(transparent 55%, transparent 55%)}50%{background:linear-gradient(transparent 55%, #E8EBFD 55%)}}
+</style>
+</head>
+<body>
+  <div class="demo"><button class="btn">Hover · press</button><span class="label">btn · 120ms</span></div>
+  <div class="demo"><div class="card">Hover to lift</div><span class="label">card · 220ms</span></div>
+  <div class="demo"><div class="hl">we <span>build</span> spaces</div><span class="label">highlight fade · 2.4s</span></div>
+</body>
+</html>
