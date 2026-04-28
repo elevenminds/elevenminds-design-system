@@ -1,3 +1,3 @@
 /* @elevenminds/design-system — single import surface */
 @import "./web/naanix/colors_and_type.css";
-@import "./web/naanix/_subsystem.css";
+@import "./web/naanix/sub_systems/_subsystem.css";

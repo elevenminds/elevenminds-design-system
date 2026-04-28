@@ -15,7 +15,7 @@
   "homepage": "https://github.com/elevenminds/elevenminds-design-system#readme",
   "files": [
     "web/naanix/colors_and_type.css",
-    "web/naanix/_subsystem.css",
+    "web/naanix/sub_systems/_subsystem.css",
     "web/naanix/sub_systems/naanix/tokens.css",
     "web/naanix/sub_systems/linkerweb/tokens.css",
     "web/naanix/sub_systems/spheregt/tokens.css",
@@ -28,7 +28,7 @@
   ],
   "exports": {
     "./tokens.css": "./web/naanix/colors_and_type.css",
-    "./subsystem.css": "./web/naanix/_subsystem.css",
+    "./subsystem.css": "./web/naanix/sub_systems/_subsystem.css",
     "./naanix/tokens.css": "./web/naanix/sub_systems/naanix/tokens.css",
     "./naanix/logo.svg": "./web/naanix/sub_systems/naanix/logo.svg",
     "./linkerweb/tokens.css": "./web/naanix/sub_systems/linkerweb/tokens.css",
