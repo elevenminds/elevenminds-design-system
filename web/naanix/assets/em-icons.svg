@@ -348,6 +348,56 @@
       <circle cx="19" cy="26" r="1.4" fill="currentColor"></circle>
       <circle cx="29" cy="26" r="1.4" fill="currentColor"></circle>
     </symbol>
+
+    <!-- POI · polygonal — geofence / sitio polygon. From design bundle
+         elevenminds-rtls-latest/preview/icons-poi-polygon.html. -->
+    <symbol id="em-poi-polygon" viewBox="0 0 48 48">
+      <path d="M10 14 L22 6 L38 12 L40 30 L26 42 L8 32 Z"
+            fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="10" cy="14" r="1.6" fill="currentColor"/>
+      <circle cx="22" cy="6"  r="1.6" fill="currentColor"/>
+      <circle cx="38" cy="12" r="1.6" fill="currentColor"/>
+      <circle cx="40" cy="30" r="1.6" fill="currentColor"/>
+      <circle cx="26" cy="42" r="1.6" fill="currentColor"/>
+      <circle cx="8"  cy="32" r="1.6" fill="currentColor"/>
+      <circle cx="23" cy="22" r="3"
+              fill="currentColor" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+
+    <!-- Solid variant for active/inverse states — same silhouette filled,
+         centroid as a knockout. -->
+    <symbol id="em-poi-polygon-solid" viewBox="0 0 48 48">
+      <path d="M10 14 L22 6 L38 12 L40 30 L26 42 L8 32 Z"
+            fill="currentColor" stroke="currentColor" stroke-width="1.8"
+            stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="23" cy="22" r="3.2" fill="#fff"/>
+    </symbol>
+
+    <symbol id="em-layers" viewBox="0 0 48 48">
+      <path d="M24 8 L40 16 L24 24 L8 16 Z" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M10 22 L24 29 L38 22" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M10 30 L24 37 L38 30" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="em-satellite" viewBox="0 0 48 48">
+      <circle cx="22" cy="26" r="11" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M11 26 H33" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+      <path d="M22 15 Q17 26 22 37" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+      <ellipse cx="24" cy="20" rx="18" ry="5" transform="rotate(-22 24 20)"
+               fill="none" stroke="currentColor" stroke-width="1.6"
+               stroke-dasharray="2 2.4" stroke-linecap="round"/>
+      <circle cx="40" cy="12" r="2.4" fill="currentColor"/>
+    </symbol>
+
+    <symbol id="em-traffic" viewBox="0 0 48 48">
+      <circle cx="24" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="24" cy="24" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="24" cy="36" r="3.4" fill="currentColor"/>
+    </symbol>
   </defs>
   <circle fill="#E5E5E5" cx="133" cy="84" r="28"></circle>
   <svg x="117" y="68" width="32" height="32" overflow="visible"><use href="#em-clock" color="#111"></use></svg>

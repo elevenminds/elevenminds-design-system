@@ -1,0 +1,89 @@
+/* Google Fonts must come before any rules — hoist before the design-system
+   chain so the @import order is spec-compliant after concatenation. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&display=swap");
+
+@import "tailwindcss";
+@import "@elevenminds/design-system/index.css";
+@import "@elevenminds/design-system/naanix/tokens.css";
+
+/* ============================================================
+   Tailwind v4 token bridge — surface design-system CSS vars as
+   Tailwind utility classes (text-nx-red, bg-nx-bg-alt, etc.).
+   Tokens stay sourced upstream; this file is the bridge only.
+   ============================================================ */
+@theme {
+  /* Naanix brand */
+  --color-nx-red: var(--nx-red);
+  --color-nx-red-deep: var(--nx-red-deep);
+  --color-nx-red-soft: var(--nx-red-soft);
+  --color-nx-slate: var(--nx-slate);
+  --color-nx-slate-2: var(--nx-slate-2);
+  --color-nx-slate-3: #5A6270;
+
+  /* Surfaces */
+  --color-nx-bg: var(--nx-bg);
+  --color-nx-bg-alt: var(--nx-bg-alt);
+  --color-nx-bg-data: var(--nx-bg-data);
+  --color-nx-border: var(--nx-border);
+  --color-nx-border-strong: var(--nx-border-strong);
+
+  /* Alert ladder */
+  --color-nx-alert-red: var(--nx-alert-red);
+  --color-nx-alert-amber: var(--nx-alert-amber);
+  --color-nx-alert-yellow: var(--nx-alert-yellow);
+  --color-nx-alert-green: var(--nx-alert-green);
+  --color-nx-alert-teal: var(--nx-alert-teal);
+  --color-nx-alert-magenta: var(--nx-alert-magenta);
+
+  /* Dark mode surfaces (from brand_dark.html) */
+  --color-d-bg-0: #0A0A0C;
+  --color-d-bg-1: #111116;
+  --color-d-bg-2: #18181F;
+  --color-d-bg-3: #1F1F28;
+  --color-d-fg-1: #F5F5F7;
+  --color-d-fg-2: #A8A8B5;
+  --color-d-fg-3: #6E6E7E;
+  --color-d-border: #2A2A33;
+  --color-d-nx-red: #E54138;
+
+  /* Type families */
+  --font-display: var(--sb-font-display);
+  --font-sans: var(--sb-font-sans);
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Radii — naanix is sharp (2px) */
+  --radius-card: var(--sb-radius-card);
+  --radius-btn: var(--sb-radius-btn);
+  --radius-mark: var(--sb-radius-mark);
+
+  /* Motion */
+  --ease-em-out: var(--em-ease-out);
+  --ease-em-in-out: var(--em-ease-in-out);
+}
+
+/* ============================================================
+   Dark theme — applied via class on <html>, controlled by
+   Zustand store + <ThemeProvider>.
+   ============================================================ */
+@variant dark (&:where(.dark, .dark *));
+
+/* RGB triplets for rgba() composition (slate, on-slate, dark fg) */
+:root {
+  --nx-slate-rgb: 40, 46, 53;
+  --nx-onslate-fg-rgb: 255, 255, 255;
+  --d-fg-rgb: 245, 245, 247;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  color: var(--color-nx-slate);
+  background: var(--color-nx-bg-alt);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html.dark {
+  color: var(--color-d-fg-1);
+  background: var(--color-d-bg-0);
+}
